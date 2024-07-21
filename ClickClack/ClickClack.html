@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+[Author]: John Bostater
+
+[Start Date]: 6/23/24
+
+[Description]:  
+    HTML document containing the relevant transfer protocols and 
+
+-->
+
+
+<!--Meta Data-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickClack.com</title>
+
+    <!--CSS & JS Link-->
+    <link rel="stylesheet" href="MainPage.css">
+    <script src="ClickClack.js"></script>
+</head>
+
+
+<!--Vertical alignment object for all of the contents of the page-->
+<div class="vertical0">
+    <!--Header-->
+    <h1>Click Clack 
+    </h1>
+    <!--Maybe replace with an image later??-->
+    
+    <h2>A typing test</h2>
+
+
+    <!--Select Timer-->
+    <select class="selectTimer" placeholder="hello">
+        <!---->
+        <option value="1">30 Seconds</option>
+        <option value="2">1 Minute</option>
+        <option value="2">1 Minute 30 Seconds</option>
+    </select>
+    
+    <!--IN THIS AREA!!-->
+    <!--
+        Have three dropdown menus for selecting (Timer, font-size, text-color, )
+    -->      
+    <!---->    
+</div>
+
+
+<!--Input container for the user to enter text/follow along-->
+<textarea id="hello" class='typeTestBox' onclick='setText()'>text here</textarea>
+
+
+<!--Template/Boiler-Code-->
+<!--CODE FOR WRITING IN A TEXTFIELD AND HAVING IT UPDATE HEADER TEXT!!
+
+    [HTML]
+    -------
+        <textarea id="textInput" class="textArea" oninput="userEnteredText()"></textarea>      
+        <h1 id="header">Initial Text here</h1>
+
+
+    [JS]
+    ------
+        //New/random debug
+        function userEnteredText(){
+
+            alert('It worked!');
+
+            // Get references to the elements
+            const header = document.getElementById('header');
+            const textInput = document.getElementById('textInput');
+
+            // Add event listener to the textarea for live updates
+            textInput.addEventListener('input', function() {
+                // Update the <h1> with the current value of the textarea
+                header.textContent = textInput.value;
+            });
+    
+        }
+-->
+</html>
