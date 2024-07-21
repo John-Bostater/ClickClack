@@ -49,17 +49,17 @@
     <!---->    
 </div>
 
-
 <!--Input container for the user to enter text/follow along-->
-<textarea id="hello" class='typeTestBox' onclick='setText()'>text here</textarea>
+<textarea id="textBox" class='typeTestBox' spellcheck="false" onclick="setText()" oninput="userEnteredText()">text here</textarea>
+
 
 
 <!--Template/Boiler-Code-->
 <!--CODE FOR WRITING IN A TEXTFIELD AND HAVING IT UPDATE HEADER TEXT!!
 
-    [HTML]
-    -------
-        <textarea id="textInput" class="textArea" oninput="userEnteredText()"></textarea>      
+[HTML]
+-------
+<textarea id="textInput" class="textArea" oninput="userEnteredText()"></textarea>      
         <h1 id="header">Initial Text here</h1>
 
 

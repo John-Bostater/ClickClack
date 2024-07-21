@@ -14,7 +14,7 @@
 /*Base text of the entire document*/
 body{
     /*Set font and style*/
-    font-size: 18px;    
+    font-size: 14px;    
     background-color: #1A1A1A;
 }
 
@@ -76,19 +76,18 @@ h2{
     border-color: white;
     
     /*Alignment & Positioning*/
-    align-items: center;
-    width: 85%;
-    left: 5%;
-    right: 5%;
+    /*FIX ALIGNMENTS BELOW!!!*/
+    width: 80%;
+    left: 10%;
+    right: 10%;
     height: 50vh;
-    right: 15%;
-    position: relative;    
-    
+    top: 35%;
+    position: relative;
 
     /*Text box blur and transition animation*/
     filter: blur(5px);
     transition: filter 0.6s ease;
-    padding: 15px;
+    padding: 10px;
     
     /*Change the cursor color to orange*/
     caret-color: orange;
