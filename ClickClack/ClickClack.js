@@ -4,17 +4,63 @@
 [Start Date]: 6/23/24
 
 [Description]:
-  This JavaScript contains all of the relevant code for 
+  This JavaScript contains all of the relevant code for the 
+  typing test program 'Click Clack' 
+
+[Functions]: 
 
 */
+
+
+//Global Variables
+//--------------------
+  //Timer (holds dropDown value)
+    let userTimer;
+  //Timer (holds global timer object)
+    let timerId;
+
+  //Flag used for having the test text
+    //let focusFlag = true;
+
+
+
+  //Type of test the user want's to use
+
+//--------------------
+
 
 
 //DropDown Action-Event Handlers
 //-----------------------------------------------------
   //Select Test Type
 
+  //Status: INCOMPLETE
+  //Select Timer
+    //This will update the global variable we have created!
+    //[default time: 30 Seconds]
+    function changeTimer(){
+     // focusFlag = true;
+      if(timerId){
+        clearTimeout(timerId);
+        return;
+      }
 
-  //Select Time
+
+      //Get the selected value from the dropdown menu
+        const userSelection = document.getElementsByClassId('userTimer').getSelection();
+
+      //DEBUG!!
+        alert(userSelection);
+
+
+      //Map the value # with each updated time!!
+      
+
+      //This will be used in a switch case statement for the shits
+      //  switch(){}
+
+
+    }
 
 
   //Select Text Size
@@ -32,6 +78,22 @@
   //About the creator
 
 
+//DEBUG!!
+function randomOne(){
+  //NEW/DEBUG!
+    const refreshButton = document.getElementById('refreshButton');
+    
+    refreshButton.addEventListener('click', function() {
+      //DEBUG!!
+        const textBox = document.getElementById('textBox');
+
+      
+
+      //alert('Hello World');
+    });
+
+}
+
 //-----------------------------------------------------
 
 
@@ -44,13 +106,16 @@
 
 //Set up the typing test!
 function setText(){ 
-  // Get references to the elements
-    const textInput = document.getElementById('textBox');
-    textInput.value = randomText();
+
+  //Get references to the elements
+    const textBox = document.getElementById('textBox');
+  
+  //Set the random text
+    textBox.value = randomText();
 
   //Place the user's cursor at the start of the text area/box
-    textInput.selectionStart = 0;
-    textInput.selectionEnd = 0;
+    textBox.selectionStart = 0;
+    textBox.selectionEnd = 0;
 }
 
 
@@ -146,44 +211,16 @@ function randomText(){
 function userEnteredText(){
   //Set up an action-event listener/handler for the user entered text
   
-  //Text area element/object
-    const textBox = document.getElementById('textBox');
-      
-  //Capture the string contents of the randomly generated text
-    const testTxt = textBox.value.substring(1, textBox.value.length);
-  
-  //NEW!!/DEbug
-    //Set the font color of an individual char!
-     // textBox.value.charAt(0).style.color = 'white';
-  
+  //DEBUG!!
+  //REPLACE WITH METHOD/FUNCTION later!!
+    userTimer = 7000;
 
-  //See if the user's entered char matches that of the text they are matching
-  //Match!
-    if(textBox.value.charAt(0) == testTxt.charAt(0)){
-      //Update the text within the textarea
-        textBox.value = testTxt.substring(1, testTxt.length);
-      
-      //Place the user's cursor at the start of the text area/box
-        textBox.selectionStart = 0;
-        textBox.selectionEnd = 0;
-    }
-  //Unmatched char, keep the textarea as is!
-    else{
 
-    }
+  //[Note]:
+  //  you may have to put the code below into the new function
+  //  introduced above!!
+  startTest();
 
-  //All text has been correctly matched within the time frame!
-    if(textBox.value == ' '){
-      //Rare event!
-        alert('All text matched!');
-        textBox.value = 'All text correctly matched!';
-
-      //Change the color of the "winner!" text to gold
-        textBox.style.color = 'gold';
-
-      //Display a starburst animation??
-        //code here...
-    }
 
 
   //To be used later!
@@ -192,3 +229,60 @@ function userEnteredText(){
 
 }
 //-----------------------------------------------------
+
+
+
+
+//Type Test related Functions
+//---------------------------0--------------------------
+  
+  //Set timer!
+  ///* ORIGINAL!!!
+  function startTest() {
+    
+    //Text area element/object
+      const textBox = document.getElementById('textBox');
+        
+    //Capture the string contents of the randomly generated text
+      const testTxt = textBox.value.substring(1, textBox.value.length);
+    
+    //See if the user's entered char matches that of the text they are matching
+      //Match!
+      if(textBox.value.charAt(0) == testTxt.charAt(0)){
+        //Update the text within the textarea
+          textBox.value = testTxt.substring(1, testTxt.length);
+        
+        //Place the user's cursor at the start of the text area/box
+          textBox.selectionStart = 0;
+          textBox.selectionEnd = 0;
+      }
+    //Else, unmatched char. keep the textarea as is!
+
+
+
+    //All text has been correctly matched within the time frame!
+      if(textBox.value == ' '){
+        //Rare event!
+          alert('All text matched!');
+          textBox.value = 'All text correctly matched!';
+
+        //Change the color of the "winner!" text to gold
+          textBox.style.color = 'gold';
+
+        //Display a starburst animation??
+          //code here...
+      }
+
+
+    //[FIX HERE!!]
+    //[MAY NEED TO REFER TO 'boiler-Plate.html']
+    //Disable the textarea after 10 seconds
+      timerId = setTimeout(() => {
+        //Blur the text area
+        textBox.blur();
+
+      }, userTimer); //[NOTE]: 10 seconds == 10000
+      
+  }
+  //*/
+

@@ -20,37 +20,46 @@
 
     <!--CSS & JS Link-->
     <link rel="stylesheet" href="MainPage.css">
-    <script src="ClickClack.js"></script>
+    <script src="ClickClack.js" defer></script>
 </head>
 
 
 <!--Vertical alignment object for all of the contents of the page-->
 <div class="vertical0">
     <!--Header-->
-    <h1>Click Clack 
-    </h1>
+    <h1>Click Clack </h1>
     <!--Maybe replace with an image later??-->
     
-    <h2>A typing test</h2>
-
-
     <!--Select Timer-->
-    <select class="selectTimer" placeholder="hello">
-        <!---->
-        <option value="1">30 Seconds</option>
-        <option value="2">1 Minute</option>
-        <option value="2">1 Minute 30 Seconds</option>
-    </select>
-    
-    <!--IN THIS AREA!!-->
-    <!--
-        Have three dropdown menus for selecting (Timer, font-size, text-color, )
-    -->      
-    <!---->    
-</div>
+    <div>
+        <select id="userTimer" class="selectTimer" placeholder="hello">
+            <!---->
+            <option value="1">30 Seconds</option>
+            <option value="2">1 Minute</option>
+            <option value="2">1 Minute 30 Seconds</option>
+        </select>
+    </div>
 
-<!--Input container for the user to enter text/follow along-->
-<textarea id="textBox" class='typeTestBox' spellcheck="false" onclick="setText()" oninput="userEnteredText()">text here</textarea>
+    <div>
+        <!--Input container for the user to enter text/follow along-->
+        <textarea id="textBox" class='typeTestBox' spellcheck="false" onclick="setText()" oninput="userEnteredText()">text here</textarea>
+
+    </div>        
+    
+    
+
+    <!-- Buttons for the different pages and other stuff -->
+    
+    <!--About Us-->
+    <div>
+        <a href="AboutMe.html" class="link-Style">Link here</a>
+    </div>
+    
+    <!--Support Us-->
+    
+    <!---->
+
+</div>
 
 
 

@@ -36,7 +36,20 @@ h2{
     font-family: 'Times New Roman', Times, serif;
     color: white;
 }
+
+.link-Style{
+    color: gray;
+    font-size: 24px;
+}
+
+.refreshText{
+    color: white;
+    cursor: pointer;
+}
+
+
 /******************************************/
+
 
 
 /*DropDown, Art, & Animation*/
@@ -60,6 +73,7 @@ h2{
 /*Horizontal Container*/
 .vertical0{
     text-align: center;
+    gap: 20px;
 }
 
 
@@ -78,11 +92,7 @@ h2{
     /*Alignment & Positioning*/
     /*FIX ALIGNMENTS BELOW!!!*/
     width: 80%;
-    left: 10%;
-    right: 10%;
-    height: 50vh;
-    top: 35%;
-    position: relative;
+    height: 55vh;
 
     /*Text box blur and transition animation*/
     filter: blur(5px);
@@ -91,6 +101,7 @@ h2{
     
     /*Change the cursor color to orange*/
     caret-color: orange;
+    cursor: pointer;
 }
 
 /*When the user focuses into the */
