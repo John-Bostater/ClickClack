@@ -235,13 +235,21 @@ function userEnteredText(){
 
 //Type Test related Functions
 //---------------------------0--------------------------
+var finished = false;
   
   //Set timer!
   ///* ORIGINAL!!!
   function startTest() {
-    
     //Text area element/object
       const textBox = document.getElementById('textBox');
+ 
+    //Reload the page?
+    if(finished){
+      timerId = '';
+      
+
+      location.reload();
+    }
         
     //Capture the string contents of the randomly generated text
       const testTxt = textBox.value.substring(1, textBox.value.length);
@@ -279,7 +287,12 @@ function userEnteredText(){
     //Disable the textarea after 10 seconds
       timerId = setTimeout(() => {
         //Blur the text area
-        textBox.blur();
+       // textBox.blur();
+        //textBox.
+
+
+        //NEW!!!
+          finished = true;
 
       }, userTimer); //[NOTE]: 10 seconds == 10000
       
