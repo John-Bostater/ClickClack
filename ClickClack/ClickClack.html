@@ -32,30 +32,31 @@
 
 <!--Vertical alignment object for all of the contents of the page-->
 <div class="vertical0">
+   
     <!--Header-->
-    <h1>Click Clack </h1>
     <!--Maybe replace with an image later??-->
+    <h1>Click Clack        
+        <!--Timer-->
+        <div class="timerHeader">Timer: <span id="timer">30</span></div>
+   
+        <!--Select Timer-->
+        <div>
+            <select id="userTimer" class="selectTimer" placeholder="hello">
+                <!--Set up the timer options via the dropdown menu-->
+                <option value="1">30 Seconds</option>
+                <option value="2">1 Minute</option>
+                <option value="3">1 Minute 30 Seconds</option>
+                <option value="4">Infinite</option>
+            </select>
+        </div>
+    </h1>            
     
-    <!--Timer-->
-    <div id="timer">Timer: 30</div>
-
-
-    <!--Select Timer-->
-    <div>
-        <select id="userTimer" class="selectTimer" placeholder="hello">
-            <!---->
-            <option value="1">30 Seconds</option>
-            <option value="2">1 Minute</option>
-            <option value="2">1 Minute 30 Seconds</option>
-        </select>
-    </div>
-
+    <!--Container for links & expanded functionality-->
     <div>
         <!--Input container for the user to enter text/follow along-->
         <textarea id="textBox" class='typeTestBox' spellcheck="false" oninput="startTest()">Text here...</textarea>
-
     </div>        
-    
+
     
 
     <!-- Buttons for the different pages and other stuff -->
@@ -70,35 +71,4 @@
     <!---->
 
 </div>
-
-
-
-<!--Template/Boiler-Code-->
-<!--CODE FOR WRITING IN A TEXTFIELD AND HAVING IT UPDATE HEADER TEXT!!
-
-[HTML]
--------
-<textarea id="textInput" class="textArea" oninput="userEnteredText()"></textarea>      
-        <h1 id="header">Initial Text here</h1>
-
-
-    [JS]
-    ------
-        //New/random debug
-        function userEnteredText(){
-
-            alert('It worked!');
-
-            // Get references to the elements
-            const header = document.getElementById('header');
-            const textInput = document.getElementById('textInput');
-
-            // Add event listener to the textarea for live updates
-            textInput.addEventListener('input', function() {
-                // Update the <h1> with the current value of the textarea
-                header.textContent = textInput.value;
-            });
-    
-        }
--->
 </html>

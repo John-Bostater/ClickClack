@@ -59,7 +59,7 @@
   //Update the timer display
     function updateTimerDisplay() {
       //Set the timer display's time
-        timerDisplay.textContent = `Time Left: ${countdown}`;
+        timerDisplay.textContent = countdown;
     }
 
   //Start the timer
@@ -249,7 +249,7 @@
                 break;          
     
               case 9:
-                randStr += 'excellent ';
+                randStr += 'seemingly ';
                 break;
     
               case 10:
@@ -266,6 +266,18 @@
     
               case 13:
                 randStr += 'about ';
+                break;
+    
+              case 14:
+                randStr += 'zion ';
+                break;
+    
+              case 15:
+                randStr += 'around ';
+                break;
+    
+              case 16:
+                randStr += 'kind ';
                 break;
     
             }

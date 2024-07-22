@@ -10,14 +10,13 @@
 
 
 /*Text Styling*/
-/******************************************/
+/********************************************************************/
 /*Base text of the entire document*/
 body{
     /*Set font and style*/
     font-size: 14px;    
     background-color: #1A1A1A;
 }
-
 
 /*Header style #1 [Large]*/
 h1{
@@ -28,7 +27,6 @@ h1{
     color: white;
 }
 
-
 /*Header style #2 [Medium]*/
 h2{
     /*Set font size & style*/
@@ -37,18 +35,18 @@ h2{
     color: white;
 }
 
+/*Styling for any links*/
 .link-Style{
     color: gray;
     font-size: 24px;
 }
 
+/*Refresh text, text*/
 .refreshText{
     color: white;
     cursor: pointer;
 }
-
-
-/******************************************/
+/********************************************************************/
 
 
 
@@ -66,21 +64,36 @@ h2{
 
 /*Timer*/
 #timer{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: initial;
+
+    font-size: 30px;
+    color: rgb(255, 0, 0);
+}
+
+/*Timer Header*/
+.timerHeader{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: initial;
+
     font-size: 30px;
     color: white;
 }
-
-
 /******************************************/
 
 
-/*Container & Alignment*/
+
+/*Containers & Alignment*/
 /******************************************/
 
 /*Horizontal Container*/
+.horizontal0{
+    align-items: center;
+}
+
+/*Vertical Container*/
 .vertical0{
     text-align: center;
-    gap: 20px;
 }
 
 
