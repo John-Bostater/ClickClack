@@ -1,3 +1,4 @@
+//[DEFER FILE]
 /*  
     MAKE A NEW .JS FOR CLICK CLACK CALLED:  "TimerLib.js"
     THIS SCRIPT NEEDS TO HAVE 'defer' at the END OF IT!
@@ -87,7 +88,7 @@ let countdown = 10; // seconds
   //Place the user's cursor at the beginning of the textArea
     textArea.addEventListener('click', () => {
         //Randomly generate the text
-          setText();
+          //setText();
 
         //place the cursor to the beginning?    
             textArea.selectionStart = 0;

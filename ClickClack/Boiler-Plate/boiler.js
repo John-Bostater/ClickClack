@@ -54,7 +54,7 @@
   ///*
   
   //Set up the typing test!
-   export function setText(){ 
+  function setText(){ 
 
     //Get references to the elements
       const textArea = document.getElementById('textArea');
