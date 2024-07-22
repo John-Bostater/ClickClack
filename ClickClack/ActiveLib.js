@@ -13,12 +13,7 @@
     
     [DropDown Menu for setting timer]
 
-  
-
-
 */
-
-
 
 
 //TRY THIS OUT!!
@@ -67,37 +62,52 @@
         timerDisplay.textContent = `Time Left: ${countdown}`;
     }
 
-        function startTimer() {
-
-          //Do not start another timer if one is already running, or no user input
-            if(isTimerRunning){
-                return;
-            }
-
-          //Set the timer flag
-            isTimerRunning = true;
-            
-            updateTimerDisplay();
-
-            timer = setInterval(() => {
-
-                if (countdown <= 0) {
-                    clearInterval(timer);
-                    textArea.disabled = true;
-                    isTimerRunning = false;
-                    countdown = 10; // Reset countdown for future use
-                    updateTimerDisplay();
-
-                  //Call upon the WPM calculation!!
-                    //Compare: [textArea.value] with [testText]
-
-
-                } else {
-                    countdown--;
-                    updateTimerDisplay();
-                }
-            }, 1000);
+  //Start the timer
+    function startTimer() {
+      //Do not start another timer if one is already running, or no user input
+        if(isTimerRunning){
+            return;
         }
+
+      //Set the timer flag
+        isTimerRunning = true;
+        
+        updateTimerDisplay();
+
+      //Start the time, (1000) millisecond intervals [1 second]
+        timer = setInterval(() => {
+          //Stop the timer once the countdown hits zero
+            if (countdown <= 0) {
+              //Clear the interval
+                clearInterval(timer);
+              
+              //Temporarily disable the text Area
+                textArea.disabled = true;
+
+              //Set the flag to false (timer no longer running)
+                isTimerRunning = false;
+              
+              //Reset the countdown timer to the user's specifications
+                countdown = 10; // Reset countdown for future use
+                
+              //Update the timer display
+                updateTimerDisplay();
+
+              //Call upon the WPM calculation!!
+                //Compare: [textArea.value] with [testText]
+                //Call upon the function for loading the 
+
+
+            } 
+          //Else, decrement the timer
+            else {
+              //decrement count down
+                countdown--;
+              //Update the timer's display
+                updateTimerDisplay();
+            }
+        }, 1000);
+    }
 
 
   //Reset the Timer
@@ -109,19 +119,22 @@
         countdown = 10; // Reset countdown to initial value
         isTimerRunning = false;
         textArea.disabled = false;
-        textArea.value = 'Hello There Match This All '; // Here you would re-randomize the text
+        textArea.value = 'Text Here...'; // Here you would re-randomize the text
         updateTimerDisplay();
     }
+//---------------------------------------------------------------------------------------- 
 
 
+
+//Event-Listeners
+//---------------------------------------------------------------------------------------- 
   //Place the user's cursor at the beginning of the textArea
     textArea.addEventListener('click', () => {
-        //Randomly generate the text
-          setText();
-
-        //place the cursor to the beginning?    
-            textArea.selectionStart = 0;
-            textArea.selectionEnd = 0;       
+      //Randomly generate the text
+        setText();
+      //Place the cursor back to the beginning of the text    
+          textArea.selectionStart = 0;
+          textArea.selectionEnd = 0;       
     });
 
 
@@ -135,7 +148,9 @@
 
   //Start the timer upon user input (if it has not been started already)
     textArea.addEventListener('input', () => {
-        if (!isTimerRunning) {
+      //If the timer is not already running, run it
+        if(!isTimerRunning){
+          //Start the Timer
             startTimer();
         }
     });
@@ -143,8 +158,11 @@
 
   //Allow refocusing by handling blur event
     textArea.addEventListener('blur', () => {
-        if (textArea.disabled) {
-            textArea.disabled = false;
+      ///  
+      if(textArea.disabled){
+          //Re-enable the text box
+            textArea.disabled = false;          
+          //Reset the timer
             resetTimer();
         }
     });
