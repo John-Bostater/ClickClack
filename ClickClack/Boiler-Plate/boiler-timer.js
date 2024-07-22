@@ -14,18 +14,23 @@
 //import { setText } from './boiler'
 
 
-//Global variables btw!!
+//Global variables
+//----------------------------------------
 const textArea = document.getElementById('textArea');
 
-const timerDisplay = document.getElementById('timer');
-let timer;
-let isTimerRunning = false;
-let countdown = 10; // seconds
+  //Timer element/text 
+    const timerDisplay = document.getElementById('timer');
+  
+  //Timer
+    let timer;
+  let isTimerRunning = false;
+  let countdown = 10; // seconds
 
-//NEW VARIABELE!!
-  let testText = randomText();
-
-
+//Save the randomly generated text to a variable for WPM calculation
+  let testText;
+  
+//----------------------------------------
+  
 
   //Set the text of the text area ()
     textArea.textContent = "Hello There Match This All";
@@ -34,40 +39,46 @@ let countdown = 10; // seconds
   //Add the text to match to the textarea
     const textMatch = textArea.textContent;
 
-      //Test!!/DEbug
-        textArea.value = textMatch;
+  //Test!!/DEbug
+    textArea.value = textMatch;
 
 
-        function updateTimerDisplay() {
-            timerDisplay.textContent = `Time Left: ${countdown}`;
+    function updateTimerDisplay() {
+        timerDisplay.textContent = `Time Left: ${countdown}`;
+    }
+
+    function startTimer() {
+
+      //Do not start another timer if one is already running, or no user input
+        if(isTimerRunning){
+            return;
         }
 
-        function startTimer() {
+      //Set the timer flag
+        isTimerRunning = true;
+        
+        updateTimerDisplay();
 
-          //Do not start another timer if one is already running, or no user input
-            if(isTimerRunning){
-                return;
+      //Set the timer for the program to run on
+        timer = setInterval(() => {
+          //Stop the timer once the countdown reaches 0, or drops below it
+            if (countdown <= 0) {
+              //Clear the timer!
+                clearInterval(timer);
+                textArea.disabled = true;
+                isTimerRunning = false;
+                countdown = 10; // Reset countdown for future use
+                updateTimerDisplay();
+
+              //Call upon the WPM calculation!!
+              //Compare: [textArea.value] with [testText]
+                //Code here...
+            } else {
+                countdown--;
+                updateTimerDisplay();
             }
-
-          //Set the timer flag
-            isTimerRunning = true;
-            
-            updateTimerDisplay();
-
-            timer = setInterval(() => {
-
-                if (countdown <= 0) {
-                    clearInterval(timer);
-                    textArea.disabled = true;
-                    isTimerRunning = false;
-                    countdown = 10; // Reset countdown for future use
-                    updateTimerDisplay();
-                } else {
-                    countdown--;
-                    updateTimerDisplay();
-                }
-            }, 1000);
-        }
+      }, 1000);
+    }
 
  //Reset the Timer
     function resetTimer(){
@@ -81,14 +92,6 @@ let countdown = 10; // seconds
         textArea.value = 'Hello There Match This All '; // Here you would re-randomize the text
         updateTimerDisplay();
     }
-
-//        textArea.addEventListener('focus', () => {
-            //Reset the timer upon refocus
-  //          if(!isTimerRunning){
-              //
-    //            resetTimer();
-      //      }        
-        //});
 
   //Place the user's cursor at the beginning of the textArea
     textArea.addEventListener('click', () => {
@@ -136,7 +139,6 @@ function setText(){
 
     //Save the random text to be compared to later!
       testText = textArea.value;
-
   
     //Place the user's cursor at the start of the text area/box
       textArea.selectionStart = 0;

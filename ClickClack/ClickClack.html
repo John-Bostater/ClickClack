@@ -18,9 +18,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClickClack.com</title>
 
-    <!--CSS & JS Link-->
+    <!--CSS Link-->
     <link rel="stylesheet" href="MainPage.css">
-    <script src="ClickClack.js"></script>
+
+    <!--JS Links-->
+        <!--Script for Timer Functionality & Loading Random Text-->
+        <script src="ActiveLib.js" defer></script>
+
+        <!--Script for Page Functionality-->
+        <script src="ClickClack.js"></script>
 </head>
 
 
@@ -30,6 +36,10 @@
     <h1>Click Clack </h1>
     <!--Maybe replace with an image later??-->
     
+    <!--Timer-->
+    <div id="timer">Time Left: 30s</div>
+
+
     <!--Select Timer-->
     <div>
         <select id="userTimer" class="selectTimer" placeholder="hello">
@@ -42,7 +52,7 @@
 
     <div>
         <!--Input container for the user to enter text/follow along-->
-        <textarea id="textBox" class='typeTestBox' spellcheck="false" onclick="setText()" oninput="userEnteredText()">text here</textarea>
+        <textarea id="textBox" class='typeTestBox' spellcheck="false" oninput="startTest()">Text here...</textarea>
 
     </div>        
     

@@ -103,7 +103,7 @@ function randomOne(){
 
 // Attach the function to the button's click event
 
-
+/*
 //Set up the typing test!
 function setText(){ 
 
@@ -229,27 +229,29 @@ function userEnteredText(){
 
 }
 //-----------------------------------------------------
-
+//*/
 
 
 
 //Type Test related Functions
-//---------------------------0--------------------------
+//-----------------------------------------------------
 var finished = false;
   
-  //Set timer!
   ///* ORIGINAL!!!
   function startTest() {
     //Text area element/object
       const textBox = document.getElementById('textBox');
  
-    //Reload the page?
-    if(finished){
+   
+      //Reload the page?
+    /*
+      if(finished){
       timerId = '';
       
 
       location.reload();
     }
+      */
         
     //Capture the string contents of the randomly generated text
       const testTxt = textBox.value.substring(1, textBox.value.length);
@@ -285,16 +287,17 @@ var finished = false;
     //[FIX HERE!!]
     //[MAY NEED TO REFER TO 'boiler-Plate.html']
     //Disable the textarea after 10 seconds
-      timerId = setTimeout(() => {
+    //  timerId = setTimeout(() => {
         //Blur the text area
        // textBox.blur();
         //textBox.
+        //
 
 
         //NEW!!!
-          finished = true;
+      //    finished = true;
 
-      }, userTimer); //[NOTE]: 10 seconds == 10000
+     // }, userTimer); //[NOTE]: 10 seconds == 10000
       
   }
   //*/
