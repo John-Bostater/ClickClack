@@ -57,7 +57,7 @@ h2{
 .selectTimer{
     height: 40px;
     width: 100px;
-    background-color: purple;
+    background-color: white;
     border-radius: 10px;
 }
 
@@ -68,7 +68,7 @@ h2{
     font-style: initial;
 
     font-size: 30px;
-    color: rgb(255, 0, 0);
+    color: red;
 }
 
 /*Timer Header*/
@@ -78,6 +78,7 @@ h2{
 
     font-size: 30px;
     color: white;
+    padding: 10px;
 }
 /******************************************/
 

@@ -23,7 +23,12 @@
 
 
   //Options/Settings
-    //allow the user to 
+    //allow the user to change more features of the click click display/menu
+    //This button will load a new html doc that allows the user to change the 
+    //values of 'ActiveLib2.js' which will be another defer file in 'ClickClack.html' that will have 
+    //action event-handlers set for all of the 'SettingsPage.html' for the user to change more features
+    
+    //The second defer file 'ActiveLib2.js' will simply set all of the global variables it has to
 
 //-----------------------------------------------------
 

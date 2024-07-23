@@ -35,22 +35,21 @@
    
     <!--Header-->
     <!--Maybe replace with an image later??-->
-    <h1>Click Clack        
+    <h1>Click Clack
         <!--Timer-->
         <div class="timerHeader">Timer: <span id="timer">30</span></div>
-   
+
         <!--Select Timer-->
-        <div>
             <select id="userTimer" class="selectTimer">
                 <!--Set up the timer options via the dropdown menu-->
                 <option value="0">30 Seconds</option>
                 <option value="1">1 Minute</option>
                 <option value="2">1 Minute 30 Seconds</option>
                 <option value="3">Infinite</option>
+                <option value="4">Debug</option> <!--Delete when done, 5 second timer-->
             </select>
-        </div>
     </h1>            
-  
+    
     
     <!--Typing test input space-->
     <textarea id="textBox" class='typeTestBox' spellcheck="false" oninput="startTest()">Text here...</textarea>
