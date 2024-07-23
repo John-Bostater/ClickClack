@@ -233,8 +233,10 @@
                 countdown = 'Infinite!';
             break;
 
-          //Have a default 
-      }
+          //Have a default, where the user can set the time limit!!
+            //[Notes]: maybe have a text prompt appear if the user has chosen "select time"
+      
+        }
 
 
 
