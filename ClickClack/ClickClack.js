@@ -12,61 +12,6 @@
 */
 
 
-//Global Variables
-//--------------------
-  //Timer (holds dropDown value)
-    let userTimer;
-  //Timer (holds global timer object)
-    let timerId;
-
-  //Flag used for having the test text
-    //let focusFlag = true;
-
-
-
-  //Type of test the user want's to use
-
-//--------------------
-
-
-
-//DropDown Action-Event Handlers
-//-----------------------------------------------------
-  //Select Test Type
-
-  //Status: INCOMPLETE
-  //Select Timer
-    //This will update the global variable we have created!
-    //[default time: 30 Seconds]
-    function changeTimer(){
-     // focusFlag = true;
-      if(timerId){
-        clearTimeout(timerId);
-        return;
-      }
-
-
-      //Get the selected value from the dropdown menu
-        const userSelection = document.getElementsByClassId('userTimer').getSelection();
-
-      //DEBUG!!
-        alert(userSelection);
-
-
-      //Map the value # with each updated time!!
-      
-
-      //This will be used in a switch case statement for the shits
-      //  switch(){}
-
-
-    }
-
-
-  //Select Text Size
-//-----------------------------------------------------
-
-
 
 //Button Action Event Handlers
 //-----------------------------------------------------

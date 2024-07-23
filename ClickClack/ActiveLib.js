@@ -16,10 +16,6 @@
 */
 
 
-//TRY THIS OUT!!
-//import { setText } from './Random.js';
-
-
 //Global variables
 //----------------------------------------
   //Get the text area element/text
@@ -28,14 +24,21 @@
   //Timer element/text 
     const timerDisplay = document.getElementById('timer');
   
-  //Timer
+  //Select Timer DropDown menu element
+    const timerDropDown = document.getElementById('userTimer');
+
+  //Timer, [setIncrement()]
     let timer;
+
+  //Key for selecting the time of the timer (via: DropDown)
+    let timerKey = 0; 
+      //0 is default {30 seconds}
 
   //Timer Flag
     let isTimerRunning = false;
   
   //CountDown Timer
-    let countdown = 10;   //10 SECONDS FOR DEBUG!!!
+    let countdown; /*= 30;*/   //10 SECONDS FOR DEBUG!!!
       //Set to default, 10 seconds
 
   //Save the randomly generated text to a variable for WPM calculation
@@ -45,11 +48,18 @@
 
 //Constructor
 //---------------------------------------------------------------------------------------- 
-//Add the text to match to the textarea
-  const textMatch = textArea.textContent;
+  //Add the text to match to the textarea
+    const textMatch = textArea.textContent;
 
-//Set the value of the text area to the text we are trying to match
-  textArea.value = textMatch;
+  //Set the value of the text area to the text we are trying to match
+    textArea.value = textMatch;
+
+  //Set the timer key and countdown to their default values
+    timerKey = textArea.value;
+  //Default time (30 seconds)
+    countdown = 30;
+    
+    //DEBUG ZONE (Excuted upon loading of the document)
 //---------------------------------------------------------------------------------------- 
 
 
@@ -64,6 +74,9 @@
 
   //Start the timer
     function startTimer() {
+      //If the timer
+
+
       //Do not start another timer if one is already running, or no user input
         if(isTimerRunning){
             return;
@@ -88,7 +101,7 @@
                 isTimerRunning = false;
               
               //Reset the countdown timer to the user's specifications
-                countdown = 10; // Reset countdown for future use
+                //countdown = 10; // Reset countdown for future use
                 
               //Update the timer display
                 updateTimerDisplay();
@@ -116,7 +129,7 @@
         clearInterval(timer);
 
       //Set the countdown timer
-        countdown = 10; // Reset countdown to initial value
+        countdown = 30; // Reset countdown to initial value
         isTimerRunning = false;
         textArea.disabled = false;
         textArea.value = 'Text Here...'; // Here you would re-randomize the text
@@ -166,6 +179,72 @@
             resetTimer();
         }
     });
+
+
+  //Event listeners for the dropdown menu for changing the Timer
+    timerDropDown.addEventListener('click', () =>{
+      //Update the timer upon every user interaction with the dropDown menu
+      //[Default drop down value is: 0]
+
+      //If the timer is in-progress, reset it!!
+        if(isTimerRunning){
+          resetTimer();
+        }
+
+      //Get the key of the selected time
+        const timerKey = timerDropDown.value;
+
+
+      //Set the count down value and the timer display
+        switch(timerKey){
+          //30 Seconds
+            case '0':
+              //Update the timer display
+                timerDisplay.textContent = 30;
+
+              //Set the countdown timer
+                countdown = 30;
+            break;
+          
+          //60 Seconds  {1 minute}
+            case '1':
+              //Update the timer display
+                timerDisplay.textContent = 60;
+
+              //Set the count down timer
+                countdown = 60;
+            break;
+
+          //90 Seconds {1 minute, 30 seconds}
+            case '2':
+              //Update the timer display
+                timerDisplay.textContent = 90;
+
+              //Set the count down timer
+                countdown = 90;
+            break;
+
+          //Infinite
+            case '3':
+              //Update the timer display
+                timerDisplay.textContent = 'Infinite Type';
+
+              //Set the count down timer
+                countdown = 'Infinite!';
+            break;
+
+          //Have a default 
+      }
+
+
+
+
+      //Switch case statement that will update the global variable 'countdown'
+
+
+
+    });
+
 //---------------------------------------------------------------------------------------- 
 
 
@@ -188,8 +267,8 @@
             textArea.selectionEnd = 0;
         }
     }    
-  
 
+    
   //[Both: String Eat && Color Eat]
   //Function that will update the text being written or "followed along"
     function randomText(){

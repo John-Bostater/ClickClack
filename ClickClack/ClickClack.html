@@ -23,7 +23,7 @@
 
     <!--JS Links-->
         <!--Script for Timer Functionality & Loading Random Text-->
-        <script src="ActiveLib.js" defer></script>
+        <script src="ActiveLib.js" type="module" defer></script>
 
         <!--Script for Page Functionality-->
         <script src="ClickClack.js"></script>
@@ -41,22 +41,19 @@
    
         <!--Select Timer-->
         <div>
-            <select id="userTimer" class="selectTimer" placeholder="hello">
+            <select id="userTimer" class="selectTimer">
                 <!--Set up the timer options via the dropdown menu-->
-                <option value="1">30 Seconds</option>
-                <option value="2">1 Minute</option>
-                <option value="3">1 Minute 30 Seconds</option>
-                <option value="4">Infinite</option>
+                <option value="0">30 Seconds</option>
+                <option value="1">1 Minute</option>
+                <option value="2">1 Minute 30 Seconds</option>
+                <option value="3">Infinite</option>
             </select>
         </div>
     </h1>            
+  
     
-    <!--Container for links & expanded functionality-->
-    <div>
-        <!--Input container for the user to enter text/follow along-->
-        <textarea id="textBox" class='typeTestBox' spellcheck="false" oninput="startTest()">Text here...</textarea>
-    </div>        
-
+    <!--Typing test input space-->
+    <textarea id="textBox" class='typeTestBox' spellcheck="false" oninput="startTest()">Text here...</textarea>
     
 
     <!-- Buttons for the different pages and other stuff -->
