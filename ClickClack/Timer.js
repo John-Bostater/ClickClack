@@ -104,18 +104,13 @@
 
               //Set the flag to false (timer no longer running)
                 isTimerRunning = false;
-              
-              //Reset the countdown timer to the user's specifications
-                //countdown = 10; // Reset countdown for future use
-                
+                         
               //Update the timer display
                 updateTimerDisplay();
 
-              //Call upon the WPM calculation!!
-                //Compare: [textArea.value] with [testText]
-                //Call upon the function for loading the 
-
-
+              //Reset the total word count back to 0, (new test started)
+                const totalWords = document.getElementById('totalWords');
+                totalWords.textContent = 0;
             } 
           //Else, decrement the timer
             else {
