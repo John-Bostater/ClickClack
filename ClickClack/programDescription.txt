@@ -1,7 +1,0 @@
-The name of our Typing Test Website is called "Click-Clack"
-
-[In the website description we need to describe the program as: "Typing test" upon Google search]
-
-
-The files making up this typing test program/website use: HTML, CSS, and JS
-
