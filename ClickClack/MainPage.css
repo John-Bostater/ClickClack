@@ -1,7 +1,7 @@
 /*
 [Author]: John Bostater
 
-[Start Date]: 6/23/24
+[Project Start Date]: 5/11/24
 
 [Description]:
     //Description here....
@@ -14,7 +14,6 @@
 /*Base text of the entire document*/
 body{
     /*Set font and style*/
-    font-size: 14px;    
     background-color: #1A1A1A;
 }
 
@@ -25,14 +24,7 @@ h1{
     font-family: 'Times New Roman', Times, serif;
     font-style: Italic;
     color: white;
-}
-
-/*Header style #2 [Medium]*/
-h2{
-    /*Set font size & style*/
-    font-size: 24px;
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
+    margin-bottom: 20px;
 }
 
 /*Styling for any links*/
@@ -46,6 +38,16 @@ h2{
     color: white;
     cursor: pointer;
 }
+
+/*Hid the header*/
+#totalWordsHeader{
+    color: transparent;
+}
+
+/*Hide the total word count (user can make this viewable!)*/
+#totalWords{
+    color: transparent;
+}
 /********************************************************************/
 
 
@@ -53,11 +55,12 @@ h2{
 /*DropDown, Art, & Animation*/
 /******************************************/
 
-/*Select Timer*/
+/*Select Timer, DropDown*/
 .selectTimer{
     height: 40px;
-    width: 100px;
-    background-color: white;
+    width: 105px;
+    background-color: gray;
+    font-weight: bold;
     border-radius: 10px;
 }
 
@@ -71,26 +74,24 @@ h2{
     color: red;
 }
 
+
 /*Timer Header*/
 .timerHeader{
     font-family: Arial, Helvetica, sans-serif;
     font-style: initial;
-
+    padding: 30px;
     font-size: 30px;
     color: white;
-    padding: 10px;
 }
+
+
+
 /******************************************/
 
 
 
 /*Containers & Alignment*/
 /******************************************/
-
-/*Horizontal Container*/
-.horizontal0{
-    align-items: center;
-}
 
 /*Vertical Container*/
 .vertical0{
@@ -104,7 +105,7 @@ h2{
     background-color: transparent;
     color: white;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 300%;
+    font-size: 40px;
 
     /*Border color of the input box*/
     border-radius: 5px;
@@ -113,12 +114,13 @@ h2{
     /*Alignment & Positioning*/
     /*FIX ALIGNMENTS BELOW!!!*/
     width: 80%;
-    height: 55vh;
+    height: 50vh;
+
 
     /*Text box blur and transition animation*/
     filter: blur(5px);
     transition: filter 0.6s ease;
-    padding: 10px;
+    padding: 15px;
     
     /*Change the cursor color to orange*/
     caret-color: orange;
@@ -128,7 +130,12 @@ h2{
 /*When the user focuses into the */
 .typeTestBox:focus{
     color: red;
-    
     filter: blur(0px);
+}
+
+
+/*Container for all of the links to the external sites*/
+.linkContainer{
+    padding: 30px;
 }
 /******************************************/

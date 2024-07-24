@@ -12,9 +12,19 @@
 */
 
 
+//Global variables!
+//-----------------------------------------------------------
+  //Used for calculating the WPM
+    let totalWordCount = 0;
+
+  //Text box element used for setting unique event-handler??
+    const textBox = document.getElementById('textBox');
+//-----------------------------------------------------------
+
+
 
 //Button Action Event Handlers
-//-----------------------------------------------------
+//-----------------------------------------------------------------------------------------------------
   //Support Me! 
     //(load another page that had link to other websites and other info)
 
@@ -30,21 +40,49 @@
     
     //The second defer file 'ActiveLib2.js' will simply set all of the global variables it has to
 
-//-----------------------------------------------------
+//-----------------------------------------------------------------------------------------------------
+
+
+
+//Action-Event Handling
+//-----------------------------------------------------------------------------------------------------
+  //Update the wpm in live time!!
+    textBox.addEventListener('click', () => {
+      //Call upon the calc wpm!
+        calculateWpm();
+    });
+//-----------------------------------------------------------------------------------------------------
 
 
 
 //Type Test related Functions
-//-----------------------------------------------------
-  function startTest() {
+//----------------------------------------------------------------------------------
+  function typeTest(){
+    //NEW!!
+      //calculateWpm();
+
     //Text area element/object
-      const textBox = document.getElementById('textBox');
+    //  const textBox = document.getElementById('textBox');
         
     //Capture the string contents of the randomly generated text
       const testTxt = textBox.value.substring(1, textBox.value.length);
     
-    //Matched char!
+
+    //Correctly matched char
       if(textBox.value.charAt(0) == testTxt.charAt(0)){
+        //This works at incrementing the total words the user has guessed correctly
+          if(textBox.value.charAt(0) == ' ' && testTxt.charAt(0) == ' '){
+            //Increment the total word count!
+              totalWordCount += 1;
+ 
+            //[ADDITIONAL IDEA!]: update totalWords to 0 upon start of every new test!
+            //Get the total words displayed element!
+              const totalWordDisp = document.getElementById('totalWords');
+
+            //Update the total word count display!
+              totalWordDisp.textContent = totalWordCount;
+          }
+
         //Update the text within the textarea
           textBox.value = testTxt.substring(1, testTxt.length);
         
@@ -68,3 +106,4 @@
           //code here...
       }    
   }
+//----------------------------------------------------------------------------------

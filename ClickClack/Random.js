@@ -1,6 +1,60 @@
- //[Both: String Eat && Color Eat]
-  //Function that will update the text being written or "followed along"
-  export function randomText(){
+/* 
+[Author]: John Bostater
+
+[Project Start Date]: 5/11/24
+
+[Description]:
+  This JavaScript contains all of the relevant code for the 
+  typing test program 'Click Clack' 
+
+[Functions]: 
+
+*/
+
+
+//Global Variables
+//------------------------------------------------------
+  //Text area object/element
+    const textArea1 = document.getElementById('textBox');
+//------------------------------------------------------
+
+
+//Action-Event handling for loading text!
+//----------------------------------------------------------
+  //Place the user's cursor at the beginning of the textArea
+    textArea.addEventListener('click', () => {
+      //Randomly generate the text
+        setText();
+      //Place the cursor back to the beginning of the text    
+          textArea.selectionStart = 0;
+          textArea.selectionEnd = 0;       
+    });
+//----------------------------------------------------------
+
+
+//Functions for setting & generating the random text
+//---------------------------------------------------------------------------------------- 
+  //[Both: String eat & color eat]
+  //Set up the typing test
+  function setText(){   
+    //If the timer is not already running, set the random text
+      if(!isTimerRunning){
+        //Set the random text
+          textArea.value = randomText();
+    
+        //Save the random text to be compared to later!
+          testText = textArea.value;
+      
+        //Place the user's cursor at the start of the text area/box
+          textArea.selectionStart = 0;
+          textArea.selectionEnd = 0;
+      }
+  }    
+
+  
+//[Both: String Eat && Color Eat]
+//Function that will update the text being written or "followed along"
+  function randomText(){
     //[How it works]:
     //  This will generate a random number that will be modulo by 256
     //  This will select one of the 255 cases corresponding to a word which will
@@ -94,3 +148,4 @@
     //Return the randomly generated string
       return randStr;
   }
+//---------------------------------------------------------------------------------------- 
