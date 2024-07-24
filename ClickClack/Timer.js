@@ -240,14 +240,12 @@
       //Get the key of the selected time
         timerKey = timerDropDown.value;
 
+      //Set the timer's display
+        timerDisplay.textContent = setTimer(timerKey);
+    
       //Set the timer
         countdown = setTimer(timerKey);
-
-
-      //Calculate wpm
-        //calculateWpm();
     });
-
 //---------------------------------------------------------------------------------------- 
 
 
