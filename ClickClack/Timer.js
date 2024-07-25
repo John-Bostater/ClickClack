@@ -253,15 +253,20 @@
   function calculateWpm(){
     //NEW IDEA!!
     //If user has 'Infinite' just simply display the total words??
-
-
+  
     //Timer element as a const
       const wpmDisplay = document.getElementById('wpmDisplay');
     
     //Total Word Count (via: transparent id)
       const totalWordCount = document.getElementById('totalWords');
 
+    //If the user has correctly matched all of the text add one more word!
+      if(textArea.textContent == 'All text correctly matched!'){
+        //Increment total Word count ++
+          alert('Debug #1!');
+      }
+
     //Update the total wpm!
-      wpmDisplay.textContent = 'Wpm: ' + ((totalWordCount.textContent / setTimer(timerDropDown.value)) * 60);
+      wpmDisplay.textContent = ((totalWordCount.textContent / setTimer(timerDropDown.value)) * 60);
   }
 //---------------------------------------------------------------------------------------- 

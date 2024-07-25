@@ -48,6 +48,10 @@
 //-----------------------------------------------------------------------------------------------------
   //Update the wpm in live time!!
     textBox.addEventListener('click', () => {
+      //Call upon function that will remove text & heaaders to be visually minimum
+        //DEBUG HERE!!!
+          
+
       //Call upon the calc wpm!
         calculateWpm();
     });
@@ -58,12 +62,6 @@
 //Type Test related Functions
 //----------------------------------------------------------------------------------
   function typeTest(){
-    //NEW!!
-      //calculateWpm();
-
-    //Text area element/object
-    //  const textBox = document.getElementById('textBox');
-        
     //Capture the string contents of the randomly generated text
       const testTxt = textBox.value.substring(1, textBox.value.length);
     
@@ -92,16 +90,16 @@
       }
     //Else, unmatched char. keep the textarea as is!
 
-
+    //[Rare Event]
     //All text has been correctly matched within the time frame!
       if(textBox.value == ' '){
         //Rare event!
-          alert('All text matched!');
           textBox.value = 'All text correctly matched!';
 
         //Change the color of the "winner!" text to gold
           textBox.style.color = 'gold';
 
+          
         //Display a starburst animation??
           //code here...
       }    

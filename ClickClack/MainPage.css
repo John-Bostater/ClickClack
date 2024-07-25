@@ -31,6 +31,7 @@ h1{
 .link-Style{
     color: gray;
     font-size: 24px;
+    padding: 10px;
 }
 
 /*Refresh text, text*/
@@ -44,10 +45,13 @@ h1{
     color: transparent;
 }
 
-/*Hide the total word count (user can make this viewable!)*/
+/*total word count (user can make this viewable!)*/
 #totalWords{
     color: transparent;
 }
+
+/**/
+
 /********************************************************************/
 
 
@@ -69,7 +73,6 @@ h1{
 #timer{
     font-family: Arial, Helvetica, sans-serif;
     font-style: initial;
-
     font-size: 30px;
     color: red;
 }
@@ -79,13 +82,10 @@ h1{
 .timerHeader{
     font-family: Arial, Helvetica, sans-serif;
     font-style: initial;
-    padding: 30px;
     font-size: 30px;
     color: white;
+    padding: 10%;
 }
-
-
-
 /******************************************/
 
 
@@ -96,6 +96,15 @@ h1{
 /*Vertical Container*/
 .vertical0{
     text-align: center;
+}
+
+/*Container for all of the dropdown settings*/
+
+
+
+/*Container for all of the live stats [Timer & Wpm]*/
+.liveStatsContainer{
+    padding: 20px;
 }
 
 
@@ -125,6 +134,10 @@ h1{
     /*Change the cursor color to orange*/
     caret-color: orange;
     cursor: pointer;
+
+    /*Get rid of textarea highlight*/
+    outline: none;
+
 }
 
 /*When the user focuses into the */
