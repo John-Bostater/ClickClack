@@ -25,12 +25,12 @@
 //Action-Event handling for loading text!
 //----------------------------------------------------------
   //Place the user's cursor at the beginning of the textArea
-    textArea.addEventListener('click', () => {
+    textArea1.addEventListener('click', () => {
       //Randomly generate the text
         setText();
       //Place the cursor back to the beginning of the text    
-          textArea.selectionStart = 0;
-          textArea.selectionEnd = 0;       
+          textArea1.selectionStart = 0;
+          textArea1.selectionEnd = 0;       
     });
 //----------------------------------------------------------
 
@@ -43,14 +43,14 @@
     //If the timer is not already running, set the random text
       if(!isTimerRunning){
         //Set the random text
-          textArea.value = randomText();
+          textArea1.value = randomText();
     
         //Save the random text to be compared to later!
-          testText = textArea.value;
+          testText = textArea1.value;
       
         //Place the user's cursor at the start of the text area/box
-          textArea.selectionStart = 0;
-          textArea.selectionEnd = 0;
+          textArea1.selectionStart = 0;
+          textArea1.selectionEnd = 0;
       }
   }    
 
@@ -81,67 +81,19 @@
     
     //Have a switch-case for the test's key!!
     //{i.e. [Numbers] is 2}
-    /*
+    ///*
     //
     switch(testKey){
       //Common Programming Languages
       case 0:
         return commonProgrammingTest();
         
-        //Common Programming Languages
-        case 1:
-          return commonProgrammingTest();
-          
-          
-          }
-    */
-    // IMPLEMENT THE FOLLOWING ABOVE ONCE YOU HAVE THE D
-          
-
-         
-    //DEBUG RANDOM WORD GEN!!!
-    //Randomly generated String (Initialization)
-      let randStr = '';
-    
-    //Increase the variability of randomness
-      let variability = 10000000000000;
-  
-        //Produce 255 unique words for our string
-        for(let i = 0; i < 255; i++){
-          //Generate a new random number, modulo by 256 to produce # between 0 & 255
-            let randNum = Math.floor(Math.random() * variability) % 256;    
-          
-          //Switch-case for using the random number to generate a new word
-            switch(randNum){
-              case 0:
-                randStr += 'variable ';      
-                break;
-
-              case 1:
-                randStr += 'class ';
-                break;
-
-              case 2:
-                randStr += 'system ';
-                break;
-
-              case 3:
-                randStr += 'for ';
-                break;
-
-              case 4:
-                randStr += 'while ';
-                break;
-
-              case 5:
-                randStr += 'int ';
-                break;
-            }
-        }
-        
-        //Return the randomly generated string
-        return randStr;
+      //Commonly used English Words
+      case 1:
+        //return commonProgrammingTest();
+               
     }
+  }
 //---------------------------------------------------------------------------------------- 
 
 
@@ -156,7 +108,7 @@
   //Common Words of Programming Languages (default value : 0)
     function commonProgrammingTest(){
       //Randomized string to be used in text generation
-        let randStr = ' ';
+        let randStr = '';
 
       //Variability of the random number generation (less recurring words higher the var)
         let variability = 10000000000000;
@@ -165,7 +117,7 @@
       //Produce 255 unique words for our string
         for(let i = 0; i < 255; i++){
           //Generate a new random number, modulo by 256 to produce # between 0 & 255
-            let randNum = Math.floor(Math.random() * variability) % 256;    
+            let randNum = Math.floor((Math.random() * variability) % 26);    
     
           //Switch-case for using the random number to generate a new word
             switch(randNum){
@@ -192,6 +144,91 @@
               case 5:
                 randStr += 'int ';
                 break;
+                
+              case 6:
+                randStr += 'double ';
+                break;
+
+              case 7:
+                randStr += 'bool ';
+                break;
+
+              case 8:
+                randStr += 'string ';
+                break;
+
+              case 9:
+                randStr += 'print ';
+                break;
+
+              case 10:
+                randStr += 'switch ';
+                break;
+
+              case 11:
+                randStr += 'case ';
+                break;
+
+              case 12:
+                randStr += 'util ';
+                break;
+
+              case 13:
+                randStr += 'let ';
+                break;
+
+              case 14:
+                randStr += 'var ';
+                break;
+
+              case 15:
+                randStr += 'div ';
+                break;
+
+              case 16:
+                randStr += 'href ';
+                break;
+
+              case 17:
+                randStr += 'cout ';
+                break;
+
+              case 18:
+                randStr += 'console ';
+                break;
+
+              case 19:
+                randStr += 'console ';
+                break;
+
+              case 20:
+                randStr += 'auto ';
+                break;
+
+              case 21:
+                randStr += 'auto ';
+                break;
+
+              case 21:
+                randStr += 'map ';
+                break;
+
+              case 22:
+                randStr += 'hash ';
+                break;
+
+              case 23:
+                randStr += 'automata ';
+                break;
+
+              case 24:
+                randStr += 'turing ';
+                break;
+
+              case 25:
+                randStr += 'turing ';
+                break;
+
             }
         }
     

@@ -95,7 +95,7 @@
             calculateWpm();    
 
           //Stop the timer once the countdown hits zero
-            if (countdown <= 0) {
+            if(countdown <= 0){
               //Clear the interval
                 clearInterval(timer);
               
@@ -113,7 +113,7 @@
                 totalWords.textContent = 0;
             } 
           //Else, decrement the timer
-            else {
+            else{
               //decrement count down
                 countdown--;
               //Update the timer's display
@@ -215,7 +215,13 @@
       //If the text area is disable, re-enable it  
       if(textArea.disabled){
           //Re-enable the text box
-            textArea.disabled = false;          
+            textArea.disabled = false;   
+            
+          //Reset the total word count
+            const totalWordCount = document.getElementById('totalWords');
+          //Set the total words to 0
+            totalWordCount.textContent = '0';
+
           //Reset the timer
             resetTimer();
         }

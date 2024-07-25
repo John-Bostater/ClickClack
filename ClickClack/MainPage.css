@@ -24,7 +24,7 @@ h1{
     font-family: 'Times New Roman', Times, serif;
     font-style: Italic;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 /*Styling for any links*/
@@ -71,7 +71,7 @@ h1{
 
 /*Timer*/
 #timer{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: initial;
     font-size: 30px;
     color: red;
@@ -80,11 +80,10 @@ h1{
 
 /*Timer Header*/
 .timerHeader{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: initial;
     font-size: 30px;
     color: white;
-    padding: 10%;
 }
 /******************************************/
 
@@ -101,10 +100,9 @@ h1{
 /*Container for all of the dropdown settings*/
 
 
-
 /*Container for all of the live stats [Timer & Wpm]*/
 .liveStatsContainer{
-    padding: 20px;
+    padding: 25px;
 }
 
 

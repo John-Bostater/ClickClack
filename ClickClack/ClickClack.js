@@ -19,6 +19,11 @@
 
   //Text box element used for setting unique event-handler??
     const textBox = document.getElementById('textBox');
+
+
+  //List of containers that will be removed upon focus of the text box
+
+
 //-----------------------------------------------------------
 
 
@@ -48,12 +53,18 @@
 //-----------------------------------------------------------------------------------------------------
   //Update the wpm in live time!!
     textBox.addEventListener('click', () => {
-      //Call upon function that will remove text & heaaders to be visually minimum
-        //DEBUG HERE!!!
-          
-
       //Call upon the calc wpm!
         calculateWpm();
+    });
+
+
+  //Reset the total count to 0 when timer done
+    textBox.addEventListener('blur', () => {
+      //If the text box is disable, set the total word count to 0
+        if(textBox.disabled){
+          //Reset the total word count
+            totalWordCount = 0;
+        }      
     });
 //-----------------------------------------------------------------------------------------------------
 
@@ -104,4 +115,15 @@
           //code here...
       }    
   }
+//----------------------------------------------------------------------------------
+
+
+
+//Page Functions
+//----------------------------------------------------------------------------------
+  //Remove all of the dropdown menu's and extra items
+
+
+  //Bring back the clutter after the test is done, or the user goes out of focus
+
 //----------------------------------------------------------------------------------
