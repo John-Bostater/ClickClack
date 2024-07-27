@@ -107,6 +107,8 @@ h1{
 
 /*Container for all of the live stats [Timer & Wpm]*/
 .liveStatsContainer{
+    color: white;
+    font-size: 30px;
     padding: 25px;
 }
 

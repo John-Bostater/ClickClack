@@ -17,13 +17,11 @@
 //Global variables
 //--------------------------------------------------------------------
   //Get the text area element/text
-    const textArea = document.getElementById('textBox');
+    //const textBox = document.getElementById('textBox');
 
   //Timer element/text 
     const timerDisplay = document.getElementById('timer');
   
-  //Select Timer DropDown menu element
-    const timerDropDown = document.getElementById('userTimer');
 
   //Timer, [setIncrement()]
     let timer;
@@ -50,14 +48,14 @@
 
 //Constructor
 //--------------------------------------------------------------------
-  //Add the text to match to the textarea
-    const textMatch = textArea.textContent;
+  //Add the text to match to the textBox
+    const textMatch = textBox.textContent;
 
   //Set the value of the text area to the text we are trying to match
-    textArea.value = textMatch;
+    textBox.value = textMatch;
 
   //Set the timer key and countdown to their default values
-    //timerKey = textArea.value;
+    //timerKey = textBox.value;
 
   //Default time (30 seconds)
     countdown = 30;
@@ -101,7 +99,7 @@
                 clearInterval(timer);
               
               //Temporarily disable the text Area
-                textArea.disabled = true;
+                textBox.disabled = true;
 
               //Set the flag to false (timer no longer running)
                 isTimerRunning = false;
@@ -110,8 +108,15 @@
                 updateTimerDisplay();
 
               //Reset the total word count back to 0, (new test started)
-                const totalWords = document.getElementById('totalWords');
-                totalWords.textContent = 0;
+                //const totalWords = document.getElementById('totalWords');
+                //totalWords.textContent = 0;
+              //NEW!!!
+              //Reset the total word count back to 0, (new test started)
+                totalWordCount = 0;
+
+
+              //Reset the 'press any key to start a new test' flag
+                testFlag = true; 
             } 
           //Else, decrement the timer
             else{
@@ -139,10 +144,10 @@
         isTimerRunning = false;
       
       //Re-enable the text area
-        textArea.disabled = false;
+        textBox.disabled = false;
       
       //Set the text area's text to default text
-        textArea.value = 'Text Here...'; // Here you would re-randomize the text
+        textBox.value = 'Text Here...'; // Here you would re-randomize the text
         updateTimerDisplay();
     }
 
@@ -193,59 +198,20 @@
 //Event-Listeners
 //---------------------------------------------------------------------------------------- 
   //Make sure the user CANNOT select the rest of the text
-    textArea.addEventListener('select', () => {
+    textBox.addEventListener('select', () => {
       //place the cursor to the beginning?    
-        textArea.selectionStart = 0;
-        textArea.selectionEnd = 0;       
+        textBox.selectionStart = 0;
+        textBox.selectionEnd = 0;       
     });
 
 
   //Start the timer upon user input (if it has not been started already)
-    textArea.addEventListener('input', () => {
+    textBox.addEventListener('input', () => {
       //If the timer is not already running, run it
         if(!isTimerRunning){
           //Start the Timer
             startTimer();
         }
-    });
-
-
-  //Allow refocusing by handling blur event
-    textArea.addEventListener('blur', () => {
-      //If the text area is disable, re-enable it  
-      if(textArea.disabled){
-          //Re-enable the text box
-            textArea.disabled = false;   
-            
-          //Reset the total word count
-            const totalWordCount = document.getElementById('totalWords');
-          //Set the total words to 0
-            totalWordCount.textContent = '0';
-
-          //Reset the timer
-            resetTimer();
-        }
-    });
-
-
-  //Event listeners for the dropdown menu for changing the Timer
-    timerDropDown.addEventListener('click', () =>{
-      //Update the timer upon every user interaction with the dropDown menu
-      //[Default drop down value is: 0]
-
-      //If the timer is in-progress, reset it!!
-        if(isTimerRunning){
-          resetTimer();
-        }
-
-      //Get the key of the selected time
-        timerKey = timerDropDown.value;
-
-      //Set the timer's display
-        timerDisplay.textContent = setTimer(timerKey);
-    
-      //Set the timer
-        countdown = setTimer(timerKey);
     });
 //---------------------------------------------------------------------------------------- 
 
@@ -262,15 +228,15 @@
       const wpmDisplay = document.getElementById('wpmDisplay');
     
     //Total Word Count (via: transparent id)
-      const totalWordCount = document.getElementById('totalWords');
+     // const totalWordCount = document.getElementById('totalWords');
 
     //If the user has correctly matched all of the text add one more word!
-      if(textArea.textContent == 'All text correctly matched!'){
+      if(textBox.textContent == 'All text correctly matched!'){
         //Increment total Word count ++
           alert('Debug #1!');
       }
 
     //Update the total wpm!
-      wpmDisplay.textContent = ((totalWordCount.textContent / setTimer(timerDropDown.value)) * 60);
+      wpmDisplay.textContent = 'Wpm: ' + ((totalWordCount / setTimer(timerDropDown.value)) * 60);
   }
 //---------------------------------------------------------------------------------------- 

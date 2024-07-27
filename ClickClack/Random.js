@@ -16,44 +16,10 @@
 //------------------------------------------------------
   //User's key for the type of test the user wants to chose
     let testKey = 0;  //0 is the default value
-
-  //Text area object/element
-    const textArea1 = document.getElementById('textBox');
-
-  //Drop Down Menu for test selection object
-    const dropDown = document.getElementById('selectTestContent');
 //------------------------------------------------------
 
 
-//Action-Event handling for loading text!
 //----------------------------------------------------------
-  //Place the user's cursor at the beginning of the textArea
-    textArea1.addEventListener('click', () => {
-      //Randomly generate the text
-        setText();
-      //Place the cursor back to the beginning of the text    
-        textArea1.selectionStart = 0;
-        textArea1.selectionEnd = 0;       
-    });
-
-  //Add an event-listener for the second dropdown menu that will change testKey
-    dropDown.addEventListener('click', () => {
-      //Set the test Key to the new value
-        testKey = parseInt(dropDown.value, 10);
-
-       // testKey = newValue;
-
-      //DEBUG!!
-        //textArea1.value = randomText();
-
-      //NEw!!
-      // randomText();
-
-    });
-    
-//----------------------------------------------------------
-
-
 //Functions for setting & generating the random text
 //---------------------------------------------------------------------------------------- 
   //[Both: String eat & color eat]
@@ -62,39 +28,18 @@
     //If the timer is not already running, set the random text
       if(!isTimerRunning){
         //Set the random text
-          textArea1.value = randomText();
+          textBox.value = randomText();
       
         //Place the user's cursor at the start of the text area/box
-          textArea1.selectionStart = 0;
-          textArea1.selectionEnd = 0;
+          textBox.selectionStart = 0;
+          textBox.selectionEnd = 0;
       }
   }    
 
   
 //[Both: String Eat && Color Eat]
 //Function that will update the text being written or "followed along"
-  function randomText(){
-    //[How it works]:
-    //  This will generate a random number that will be modulo by 256
-    //  This will select one of the 255 cases corresponding to a word which will
-    //  be added to the string we will be returning
-  
-    
-    //For infinite type have special event!!!
-
-    
-    //USE THE FOLLOWING STRUCTURE BELOW IN THE FUNCTIONS FOR THE DIFFERENT TYPE
-    //OF TYPE TEST CONTENTS
-    //
-    //LIST OF SOME FUNCTIONS/TYPE TESTS TO CREATE!!
-    //
-    //  [Common Words of programming languages] : 0
-    //
-    //  [Common Everyday English words] : 1
-    //
-    //  [Numbers] (numebrs as words) : 2
-    
-    
+  function randomText(){  
     //Have a switch-case for the test's key!!
     //{i.e. [Numbers] is 2}
     ///*
@@ -255,8 +200,6 @@
 
   //Common English Words 
     function commmonEnglishTest(){
-      //NEW!!
-      //return "hello";
-      return 'It works';
+      return 'Finish this function!!';
     }
 //---------------------------------------------------------------------------------------- 
