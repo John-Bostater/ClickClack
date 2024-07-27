@@ -59,13 +59,15 @@ h1{
 /*DropDown, Art, & Animation*/
 /******************************************/
 
-/*Select Timer, DropDown*/
-.selectTimer{
-    height: 40px;
-    width: 105px;
-    background-color: gray;
+/*DropDown (Select) Styling for all*/
+.dropDown{
+    background-color: #1A1A1A;
     font-weight: bold;
-    border-radius: 10px;
+    font-size: 20px;
+    -webkit-text-fill-color: white;
+    border-color: transparent;
+    appearance: none;
+    color: white;
 }
 
 
@@ -97,7 +99,10 @@ h1{
     text-align: center;
 }
 
-/*Container for all of the dropdown settings*/
+
+.spaceMe0{
+    padding: 5%;    
+}
 
 
 /*Container for all of the live stats [Timer & Wpm]*/
@@ -135,12 +140,12 @@ h1{
 
     /*Get rid of textarea highlight*/
     outline: none;
-
 }
 
 /*When the user focuses into the */
 .typeTestBox:focus{
-    color: red;
+    /*Change the color of the text upon focus*/
+    /*color: red;*/
     filter: blur(0px);
 }
 

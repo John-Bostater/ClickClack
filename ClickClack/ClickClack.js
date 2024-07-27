@@ -20,6 +20,9 @@
   //Text box element used for setting unique event-handler??
     const textBox = document.getElementById('textBox');
 
+  //Flag for the test to begin 
+    let testFlag = true;
+
 
   //List of containers that will be removed upon focus of the text box
 

@@ -32,6 +32,8 @@
           textArea1.selectionStart = 0;
           textArea1.selectionEnd = 0;       
     });
+
+  //Add an event-listener for the 
 //----------------------------------------------------------
 
 
@@ -44,9 +46,6 @@
       if(!isTimerRunning){
         //Set the random text
           textArea1.value = randomText();
-    
-        //Save the random text to be compared to later!
-          testText = textArea1.value;
       
         //Place the user's cursor at the start of the text area/box
           textArea1.selectionStart = 0;
@@ -84,13 +83,13 @@
     ///*
     //
     switch(testKey){
-      //Common Programming Languages
+      //Words of Programming Languages
       case 0:
-        return commonProgrammingTest();
+        return programLanguageTest();
         
       //Commonly used English Words
       case 1:
-        //return commonProgrammingTest();
+        return commmonEnglishTest();
                
     }
   }
@@ -106,7 +105,7 @@
 //Random Text functions
 //---------------------------------------------------------------------------------------- 
   //Common Words of Programming Languages (default value : 0)
-    function commonProgrammingTest(){
+    function programLanguageTest(){
       //Randomized string to be used in text generation
         let randStr = '';
 
@@ -206,27 +205,27 @@
                 break;
 
               case 21:
-                randStr += 'auto ';
-                break;
-
-              case 21:
-                randStr += 'map ';
+                randStr += 'linked ';
                 break;
 
               case 22:
-                randStr += 'hash ';
+                randStr += 'map ';
                 break;
 
               case 23:
-                randStr += 'automata ';
+                randStr += 'hash ';
                 break;
 
               case 24:
-                randStr += 'turing ';
+                randStr += 'automata ';
                 break;
 
               case 25:
                 randStr += 'turing ';
+                break;
+
+              case 26:
+                randStr += 'deterministic ';
                 break;
 
             }

@@ -49,7 +49,7 @@
   
 
 //Constructor
-//---------------------------------------------------------------------------------------- 
+//--------------------------------------------------------------------
   //Add the text to match to the textarea
     const textMatch = textArea.textContent;
 
@@ -63,7 +63,7 @@
     countdown = 30;
     
     //DEBUG ZONE (Excuted upon loading of the document)
-//---------------------------------------------------------------------------------------- 
+//--------------------------------------------------------------------
 
 
 
@@ -203,10 +203,6 @@
           //Start the Timer
             startTimer();
         }
-      
-        //NEW!!
-       // calculateWpm();
-
     });
 
 
@@ -253,8 +249,6 @@
 
 //Words per minute calculation
 //---------------------------------------------------------------------------------------- 
-  
-  //MOVE THIS TO TIMER.JS
   //Calculate the total WPM and display it!
   function calculateWpm(){
     //NEW IDEA!!
