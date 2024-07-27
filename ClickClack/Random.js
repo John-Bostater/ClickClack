@@ -19,6 +19,9 @@
 
   //Text area object/element
     const textArea1 = document.getElementById('textBox');
+
+  //Drop Down Menu for test selection object
+    const dropDown = document.getElementById('selectTestContent');
 //------------------------------------------------------
 
 
@@ -29,11 +32,25 @@
       //Randomly generate the text
         setText();
       //Place the cursor back to the beginning of the text    
-          textArea1.selectionStart = 0;
-          textArea1.selectionEnd = 0;       
+        textArea1.selectionStart = 0;
+        textArea1.selectionEnd = 0;       
     });
 
-  //Add an event-listener for the 
+  //Add an event-listener for the second dropdown menu that will change testKey
+    dropDown.addEventListener('click', () => {
+      //Set the test Key to the new value
+        testKey = parseInt(dropDown.value, 10);
+
+       // testKey = newValue;
+
+      //DEBUG!!
+        //textArea1.value = randomText();
+
+      //NEw!!
+      // randomText();
+
+    });
+    
 //----------------------------------------------------------
 
 
@@ -116,7 +133,7 @@
       //Produce 255 unique words for our string
         for(let i = 0; i < 255; i++){
           //Generate a new random number, modulo by 256 to produce # between 0 & 255
-            let randNum = Math.floor((Math.random() * variability) % 26);    
+            let randNum = Math.floor((Math.random() * variability) % 27);    
     
           //Switch-case for using the random number to generate a new word
             switch(randNum){
@@ -237,5 +254,9 @@
 
 
   //Common English Words 
-    //NEW!!
+    function commmonEnglishTest(){
+      //NEW!!
+      //return "hello";
+      return 'It works';
+    }
 //---------------------------------------------------------------------------------------- 

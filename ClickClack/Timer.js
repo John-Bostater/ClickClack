@@ -75,6 +75,7 @@
         timerDisplay.textContent = countdown;
     }
 
+
   //Start the timer
     function startTimer() { 
       //Do not start another timer if one is already running, or no user input
@@ -148,32 +149,35 @@
 
   //Set the timer value via timer key as input parameter
     function setTimer(userTimerKey){
+      //Get the value as an int (makes switch-case faster)
+        userTimerKey = parseInt(userTimerKey, 10)
+
       //Switch case for setting up the timer
       //Set the count down value and the timer display
         switch(userTimerKey){
           //30 Seconds
-            case '0':
+            case 0:
               return 30;
            
           
           //60 Seconds  {1 minute}
-            case '1':
+            case 1:
                 return 60;
            
 
           //90 Seconds {1 minute, 30 seconds}
-            case '2':
+            case 2:
                 return 90;
            
 
           //Infinite
-            case '3':
+            case 3:
                 return 'Infinite';
            
         
           //DELETE WHEN DONE!!
           //DEBUG!!!!
-            case '4':
+            case 4:
                 return 5;
            
 
