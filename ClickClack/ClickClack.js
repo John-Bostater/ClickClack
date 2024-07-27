@@ -166,6 +166,13 @@
         countdown = setTimer(timerKey);
     });
 
+
+  //Make sure the user CANNOT select the rest of the text
+    textBox.addEventListener('select', () => {
+      //place the cursor to the beginning?    
+        textBox.selectionStart = 0;
+        textBox.selectionEnd = 0;       
+    });    
 //-----------------------------------------------------------------------------------------------------
 
 
@@ -182,15 +189,6 @@
           if(textBox.value.charAt(0) == ' ' && testTxt.charAt(0) == ' '){
             //Increment the total word count!
               totalWordCount += 1;
- 
-              
-            //OLD!!!
-            //[ADDITIONAL IDEA!]: update totalWords to 0 upon start of every new test!
-            //Get the total words displayed element!
-              //const totalWordDisp = document.getElementById('totalWords');
-
-            //Update the total word count display!
-              //totalWordDisp.textContent = totalWordCount;
           }
 
         //Update the text within the textBox

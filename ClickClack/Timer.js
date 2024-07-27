@@ -22,7 +22,6 @@
   //Timer element/text 
     const timerDisplay = document.getElementById('timer');
   
-
   //Timer, [setIncrement()]
     let timer;
 
@@ -79,7 +78,7 @@
       //Do not start another timer if one is already running, or no user input
       //If the timer is set to 'Infinite' just return here so the timer never starts  
         if(isTimerRunning || countdown == 'Infinite'){
-            return;
+          return;
         }
 
       //Set the timer flag
@@ -108,12 +107,7 @@
                 updateTimerDisplay();
 
               //Reset the total word count back to 0, (new test started)
-                //const totalWords = document.getElementById('totalWords');
-                //totalWords.textContent = 0;
-              //NEW!!!
-              //Reset the total word count back to 0, (new test started)
                 totalWordCount = 0;
-
 
               //Reset the 'press any key to start a new test' flag
                 testFlag = true; 
@@ -185,9 +179,8 @@
             case 4:
                 return 5;
            
-
-          //Have a default statement that will switch the user's 
-
+          //Have a case for "customize timer!!"
+          
         }
       //Switch case statement that will update the global variable 'countdown'
     }
@@ -197,14 +190,6 @@
 
 //Event-Listeners
 //---------------------------------------------------------------------------------------- 
-  //Make sure the user CANNOT select the rest of the text
-    textBox.addEventListener('select', () => {
-      //place the cursor to the beginning?    
-        textBox.selectionStart = 0;
-        textBox.selectionEnd = 0;       
-    });
-
-
   //Start the timer upon user input (if it has not been started already)
     textBox.addEventListener('input', () => {
       //If the timer is not already running, run it
