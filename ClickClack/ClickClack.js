@@ -64,17 +64,8 @@
           //Re-enable the text box
             textBox.disabled = false;   
             
-
-          //NEW!!
+          //Set the total word count back to 0 for the next test
             totalWordCount = 0;
-
-
-
-          //OLD!!
-          //Reset the total word count
-            //const totalWordCount = document.getElementById('totalWords');
-          //Set the total words to 0
-            //totalWordCount.textContent = '0';
 
           //Reset the timer
             resetTimer();
@@ -121,7 +112,6 @@
           //Start the test based on user input
             typeTest();
           
-          //NEW!!
           //Put the textBox into focus
             textBox.focus();
 
@@ -134,15 +124,6 @@
     dropDown.addEventListener('click', () => {
       //Set the test Key to the new value
         testKey = parseInt(dropDown.value, 10);
-
-      // testKey = newValue;
-
-      //DEBUG!!
-        //textBox.value = randomText();
-
-      //NEw!!
-      // randomText();
-
     });
 
 
@@ -181,8 +162,8 @@
   function typeTest(){
     //Capture the string contents of the randomly generated text
       const testTxt = textBox.value.substring(1, textBox.value.length);
-    
 
+      
     //Correctly matched char
       if(textBox.value.charAt(0) == testTxt.charAt(0)){
         //This works at incrementing the total words the user has guessed correctly
