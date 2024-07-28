@@ -12,6 +12,8 @@
 
 [TO DO]:
     -Have an animation for a toggle button between Dark mode and light mode!
+        (default is Moon [i.e. dark mode])
+        HAVE THE ANIMATION TRANSITION FROM MOON TO SUN!!!
 
 -->
 
@@ -79,9 +81,16 @@
             </span>
         </div>        
         
+        
+        <!--NEW!!!-->
+        <!--Have a text displayed over the text box to tell the user how to proceed-->
+        <p id="proceedFlag" class="proceedKey">*Press any key to proceed</p>
+
+
         <!--Typing test input space-->
         <textarea id="textBox" class='typeTestBox' spellcheck="false" oninput="typeTest()">Text here...</textarea>
         
+
         
         <!--Space for links to other sites & settings page-->
         <div class="linkContainer">      

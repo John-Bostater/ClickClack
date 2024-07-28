@@ -2,10 +2,6 @@
 [Author]: John Bostater
 
 [Project Start Date]: 5/11/24
-
-[Description]:
-    //Description here....
-
 */
 
 
@@ -40,17 +36,14 @@ h1{
     cursor: pointer;
 }
 
-/*Hid the header*/
-#totalWordsHeader{
-    color: transparent;
+/*Press any key to proceed*/
+.proceedKey{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    right: 25%;
 }
-
-/*total word count (user can make this viewable!)*/
-#totalWords{
-    color: transparent;
-}
-
-/**/
 
 /********************************************************************/
 
@@ -68,6 +61,7 @@ h1{
     border-color: transparent;
     appearance: none;
     color: white;
+    outline: none;
 }
 
 
@@ -99,7 +93,7 @@ h1{
     text-align: center;
 }
 
-
+/*KEEP!!! (Rename)*/
 .spaceMe0{
     padding: 2%;    
 }

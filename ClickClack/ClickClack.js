@@ -81,13 +81,12 @@
 
   //Start the test upon user input
     textBox.addEventListener('click', () => {
-      //NEW!!
-        //Randomly generate the text
+      //Randomly generate the text
         setText();
 
-        //Place the cursor back to the beginning of the text    
-          textBox.selectionStart = 0;
-          textBox.selectionEnd = 0;       
+      //Place the cursor back to the beginning of the text    
+        textBox.selectionStart = 0;
+        textBox.selectionEnd = 0;       
 
       //Start the type test!!
         typeTest();
@@ -160,9 +159,11 @@
 //Type Test related Functions
 //----------------------------------------------------------------------------------
   function typeTest(){
+    //Remove the clutter to put more focus on the text
+      removeClutter();
+
     //Capture the string contents of the randomly generated text
       const testTxt = textBox.value.substring(1, textBox.value.length);
-
       
     //Correctly matched char
       if(textBox.value.charAt(0) == testTxt.charAt(0)){
@@ -202,8 +203,32 @@
 //Page Functions
 //----------------------------------------------------------------------------------
   //Remove all of the dropdown menu's and extra items
+    function removeClutter(){
+      //This will remove all of the headers and unecessary text from the html doc
+        
+      //Elements to be removed
+        const removeMe = document.getElementById('proceedFlag');
+
+
+      //Remove the following!
+        removeMe.parentNode.removeChild(removeMe);
+
+    }
 
 
   //Bring back the clutter after the test is done, or the user goes out of focus
+    function fillPage(){
+      //Elements to be removed
+        const addBackContainer = document.getElementById('vertical0');
 
+      //Recreate the elements to add back to the page!!!
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = '*Press any key to proceed'
+        newParagraph.classList.add('proceedFlag');
+      
+
+
+      //Remove the following!
+        addBackContainer.appendChild(removeMe);    
+    }
 //----------------------------------------------------------------------------------
