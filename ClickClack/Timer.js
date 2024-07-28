@@ -222,6 +222,6 @@
       }
 
     //Update the total wpm!
-      wpmDisplay.textContent = 'Wpm: ' + ((totalWordCount / setTimer(timerDropDown.value)) * 60);
+      wpmDisplay.textContent = ((totalWordCount / setTimer(timerDropDown.value)) * 60);
   }
 //---------------------------------------------------------------------------------------- 
