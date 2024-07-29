@@ -74,6 +74,15 @@ h1{
 }
 
 
+/*WPM*/
+#wpmDisplay{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: initial;
+    font-size: 30px;
+    color: red;
+}
+
+
 /*Timer Header*/
 .timerHeader{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -81,6 +90,9 @@ h1{
     font-size: 30px;
     color: white;
 }
+
+
+/*DEBUG!!*/
 /******************************************/
 
 

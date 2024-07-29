@@ -29,6 +29,9 @@
   //Flag for the test to begin 
     let testFlag = true;
 
+  //Flag for 'removing the clutter'
+    let clutterFlag = true;
+
   //List of containers that will be removed upon focus of the text box
 //-----------------------------------------------------------
 
@@ -59,6 +62,13 @@
 //-----------------------------------------------------------------------------------------------------
   //Reset the total count to 0 when timer done
     textBox.addEventListener('blur', () => {
+      //NEW!!!
+        if(!clutterFlag){
+          fillPage();
+
+          clutterFlag = true;
+        }
+
       //If the text area is disabled, re-enable it  
         if(textBox.disabled){
           //Re-enable the text box
@@ -77,6 +87,21 @@
             totalWordCount = 0;
         }      
     });
+
+  //NEW!!
+  textBox.addEventListener('focus', () => {
+    //NEW!!
+    //Set the clutter flag back to true?
+      //clutterFlag = true;
+
+    //NEW!!
+      if(clutterFlag){
+        removeClutter();
+        clutterFlag=false;
+      }
+
+  });
+
 
 
   //Start the test upon user input
@@ -160,7 +185,11 @@
 //----------------------------------------------------------------------------------
   function typeTest(){
     //Remove the clutter to put more focus on the text
+      
+    if(clutterFlag){
       removeClutter();
+      clutterFlag=false;
+    }
 
     //Capture the string contents of the randomly generated text
       const testTxt = textBox.value.substring(1, textBox.value.length);
@@ -206,12 +235,18 @@
     function removeClutter(){
       //This will remove all of the headers and unecessary text from the html doc
         
-      //Elements to be removed
-        const removeMe = document.getElementById('proceedFlag');
+      //If the remove clutter flag has stayed the same
+     // if(clutterFlag){
+        //Elements to be removed
+          const removeMe = document.getElementById('proceedFlag');
 
-
-      //Remove the following!
-        removeMe.parentNode.removeChild(removeMe);
+        //Remove the following!
+          removeMe.parentNode.removeChild(removeMe);
+   
+        //NEW!!
+        //Set the flag back to false??
+         // clutterFlag = false;
+    // }
 
     }
 
@@ -224,11 +259,11 @@
       //Recreate the elements to add back to the page!!!
         const newParagraph = document.createElement('p');
         newParagraph.textContent = '*Press any key to proceed'
-        newParagraph.classList.add('proceedFlag');
+        newParagraph.className = 'proceedKey';
       
 
 
       //Remove the following!
-        addBackContainer.appendChild(removeMe);    
+        addBackContainer.appendChild(newParagraph);    
     }
 //----------------------------------------------------------------------------------
