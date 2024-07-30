@@ -32,8 +32,31 @@
   //Flag for 'removing the clutter'
     let clutterFlag = true;
 
+  //NEW!!!
+    let rotationAngle = 90;
+    const moonElement = document.getElementById('moon');
+    const sunElement = document.getElementById('sun');
+    //const debug10 = document.getElementById('');
+
   //List of containers that will be removed upon focus of the text box
 //-----------------------------------------------------------
+
+
+//NEW!!!
+  function animation0(){
+    
+    //DEBUG!!
+    textBox.value = 'No wayyyy';
+    
+    moonElement.style.transform = 'rotate(' + rotationAngle + 'deg)'
+    
+    rotationAngle += 180;
+    
+    sunElement.style.transform = 'rotate(' + rotationAngle + 'deg)'
+
+  }
+
+  window.onload = animation0();
 
 
 
@@ -106,6 +129,9 @@
 
   //Start the test upon user input
     textBox.addEventListener('click', () => {
+      //NEW!!
+        //testFlag = false;
+
       //Randomly generate the text
         setText();
 
@@ -121,9 +147,20 @@
     });
 
 
+     // /*
+
   //Add a general event-listener to the document
     document.addEventListener('keydown', function(event){
-      //Dont collect the trigger keypress? 
+      const forbiddenKeys = [
+        'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', // Arrow keys
+        'Home', 'End', 'PageUp', 'PageDown'                // Home, End, Page Up, Page Down
+      ];
+
+      if (forbiddenKeys.includes(event.key)) {
+        event.preventDefault(); // Prevent default behavior for forbidden keys
+      }
+
+
 
       //Start the test once!!
         if(testFlag){
@@ -143,6 +180,7 @@
             testFlag = false;
         }
     });
+//*/
 
   //Add an event-listener for the second dropdown menu that will change testKey
     dropDown.addEventListener('click', () => {
@@ -186,10 +224,12 @@
   function typeTest(){
     //Remove the clutter to put more focus on the text
       
-    if(clutterFlag){
-      removeClutter();
-      clutterFlag=false;
-    }
+    ///*
+   // if(clutterFlag){
+    //  removeClutter();
+     // clutterFlag=false;
+    //}
+      //*/
 
     //Capture the string contents of the randomly generated text
       const testTxt = textBox.value.substring(1, textBox.value.length);
@@ -260,6 +300,7 @@
         const newParagraph = document.createElement('p');
         newParagraph.textContent = '*Press any key to proceed'
         newParagraph.className = 'proceedKey';
+        newParagraph.id = 'proceedKey';
       
 
 

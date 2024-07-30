@@ -10,7 +10,10 @@
 /*Base text of the entire document*/
 body{
     /*Set font and style*/
+    /*
     background-color: #1A1A1A;
+    */
+    background-color: black;
 }
 
 /*Header style #1 [Large]*/
@@ -40,9 +43,6 @@ h1{
 .proceedKey{
     color: white;
     position: absolute;
-    top: 50%;
-    left: 25%;
-    right: 25%;
 }
 
 /********************************************************************/
@@ -54,13 +54,12 @@ h1{
 
 /*DropDown (Select) Styling for all*/
 .dropDown{
-    background-color: #1A1A1A;
+    background-color: transparent;
     font-weight: bold;
     font-size: 20px;
     -webkit-text-fill-color: white;
     border-color: transparent;
     appearance: none;
-    color: white;
     outline: none;
 }
 
@@ -92,7 +91,107 @@ h1{
 }
 
 
-/*DEBUG!!*/
+/*Container for the Light/Dark Mode slider*/
+/*[Animation Description]:
+    - Have the animation have a moon hovering above the slider button and upon slider input
+      the moon will fall behind the slider and a sun will rise in the moon's old spot 
+      this will give the moon/sun a sunrise/sunset vibe
+*/
+
+/*NEW!*/
+.light-dark-toggle-container{
+    width: 75px;
+    height: 50px;
+    left: 10px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: black;
+}
+
+
+#light-dark-toggle{
+    /*Toggle switch space*/
+    width: 80px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #1a1a1a;
+    position: absolute;
+
+
+
+    /*Other*/
+    cursor: pointer;
+}
+
+
+/*Moon*/
+.moon{
+    /*Object creation*/
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #2A2A2A;
+    position: absolute;
+
+    /*NEW!!*/
+    left: 5px;
+
+
+    /*Animation relation*/
+    transform-origin: 40px;
+    transition: transform 2s;  
+}
+
+/*Crater*/
+.crater{
+    /*Object creation*/
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+/*Sun*/
+.sun{
+    /*Object creation*/
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: yellow;
+    position: absolute;
+
+
+    /*NEW!!*/
+    left: 5px;
+
+
+    /*Animation relation*/
+    transform-origin: 40px;
+    transition: transform 2s;  
+}
+
+
+/*NEW!!!*/
+.planetContainer{
+    padding: 5px;
+}
+
+
+/*Rotation animation*/
+/*Moon Animation
+
+@keyframes rotate {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    } 
+}
+*/
 /******************************************/
 
 

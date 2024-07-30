@@ -111,6 +111,11 @@
 
               //Reset the 'press any key to start a new test' flag
                 testFlag = true; 
+
+              //NEW!!!
+                fillPage();
+                clutterFlag = true;
+
             } 
           //Else, decrement the timer
             else{

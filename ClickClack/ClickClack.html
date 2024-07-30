@@ -44,7 +44,28 @@
    
     <!--Header-->
     <!--Maybe replace with an image later??-->
-    <h1>Click Clack</h1>
+    <h1>
+        Click Clack
+        
+
+        <!--Light/Dark Mode Toggle Switch-->
+        <!--Fix alignment & animation!!-->
+        <!--NEW!!-->
+        <div class="planetContainer">
+            
+            <!--Planets!!!-->
+            <div id="moon" class="moon">
+                <div class="crater"></div>
+            </div>
+            <div id="sun" class="sun"></div>
+        </div>
+            <div class="light-dark-toggle-container">          
+            
+            </div>                 
+
+            <div id="light-dark-toggle" onclick="animation0()">
+    </h1>
+
         <!--Container for all of the dropdown items-->
         <div class="dropDownContainer">
             <!--Select Timer-->
@@ -82,16 +103,13 @@
         </div>        
         
         
-        <!--NEW!!!-->
-        <!--Have a text displayed over the text box to tell the user how to proceed-->
-            <p id="proceedFlag" class="proceedKey">*Press any key to proceed</p>
-
-
+        <!--Have a text displayed over the text box to tell the user how to proceed
+        <p id="proceedFlag" class="proceedKey">*Press any key to proceed</p>   
+        -->
+        
         <!--Typing test input space-->
         <textarea id="textBox" class='typeTestBox' spellcheck="false" oninput="typeTest()">Text here...</textarea>
-        
-
-        
+     
         <!--Space for links to other sites & settings page-->
         <div class="linkContainer">      
             <!--Future note!! Place image icons for every link!-->
