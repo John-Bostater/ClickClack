@@ -133,16 +133,29 @@ h1{
 }
 
 /*Crater*/
-.crater{
+.crater0{
     /*Object creation*/
     width: 5px;
     height: 5px;
     border-radius: 5px;
-    background-color: white;
+    background-color: rgb(138, 138, 138);
     position: absolute;
     left: 10px;
     top: 10px;
 }
+
+/*Crater*/
+.crater1{
+    /*Object creation*/
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: rgb(5, 5, 5);
+    position: absolute;
+    left: 11px;
+    top: 10px;
+}
+
 
 /*Sun*/
 .sun{

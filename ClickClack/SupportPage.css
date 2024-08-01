@@ -1,0 +1,60 @@
+/*
+[Author]: John Bostater
+
+[Project Start Date]: 
+*/
+
+
+/*Containers*/
+/***************************************************/
+.vertical0{
+    text-align: center;
+
+}
+
+.venmoLogo{
+    width: 150px;
+    height: 150px;
+}
+
+/***************************************************/
+
+
+/*Buttons*/
+/***************************************************/
+.goBack{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    -webkit-text-fill-color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.goBack:hover{
+    background-color: blueviolet;
+}
+/***************************************************/
+
+
+/*Text Styling*/
+/***************************************************/
+body{
+    font-size: 24px;
+    background-color: black;
+    -webkit-text-fill-color: white;
+}
+
+
+h1{
+    font-size: 72px;
+    -webkit-text-fill-color: white;
+}
+
+
+h2{
+    font-size: 34px;
+    -webkit-text-fill-color: white;
+}
+/***************************************************/

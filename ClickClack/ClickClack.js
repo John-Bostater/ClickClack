@@ -36,32 +36,36 @@
   //Light/Dark Mode Animation
   //NEW!!!
     let triggerFlag = 0;
-    let rotationAngle = 90; 
     const moonElement = document.getElementById('moon');
     const sunElement = document.getElementById('sun');
     //const debug10 = document.getElementById('');
+  //NEW!!!!!
+  //NEW!!!
+    let moonRotationAngle = 90;
+    let sunRotationAngle = 90;
+  
 
   //List of containers that will be removed upon focus of the text box
 //-----------------------------------------------------------
 
 
 //NEW!!!
-//sunElement.style.opacity = 0;
+sunElement.style.opacity = 0;
 
 
 //NEW!!!
 //Light/Dark Mode Animation
-function animation0(){
-  
-    //DEBUG!!
-    //textBox.value = 'No wayyyy';
+function animation0(){  
+  //DEBUG!!
+  //textBox.value = 'No wayyyy';
     
-    //Rotate the moon and sun animation
-    moonElement.style.transform = 'rotate(' + rotationAngle + 'deg)'
+  //Rotate the moon and sun animation
+    moonElement.style.transform = 'rotate(' + moonRotationAngle + 'deg)'
     
-    rotationAngle += 180;
+    moonRotationAngle += 180;
+    sunRotationAngle += 180;
     
-    sunElement.style.transform = 'rotate(' + rotationAngle + 'deg)'
+    sunElement.style.transform = 'rotate(' + sunRotationAngle + 'deg)'
     
     
     //Dark Mode   [ON]
@@ -115,7 +119,7 @@ function animation0(){
 
   //DEBUG!!! (or keep if you end up liking it!)
   //Load the toggle animation upon refreshing the page
-    //window.onload = animation0();
+    window.onload = animation0();
  
 
 
