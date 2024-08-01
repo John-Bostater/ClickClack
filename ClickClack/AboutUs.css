@@ -3,3 +3,25 @@
 
 [Project Start Date]: 5/11/24
 */
+
+
+/*Containers*/
+/*************************************/
+.vertical0{
+    /*Alignment of items*/
+    text-align: center;    
+}
+/*************************************/
+
+
+
+/*Buttons*/
+/*************************************/
+.goBack{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    
+}
+
+/*************************************/

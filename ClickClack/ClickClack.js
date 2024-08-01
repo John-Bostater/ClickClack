@@ -32,8 +32,11 @@
   //Flag for 'removing the clutter'
     let clutterFlag = true;
 
+
+  //Light/Dark Mode Animation
   //NEW!!!
-    let rotationAngle = 90;
+    let triggerFlag = 0;
+    let rotationAngle = 90; 
     const moonElement = document.getElementById('moon');
     const sunElement = document.getElementById('sun');
     //const debug10 = document.getElementById('');
@@ -43,21 +46,73 @@
 
 
 //NEW!!!
+//Light/Dark Mode Animation
   function animation0(){
     
     //DEBUG!!
-    textBox.value = 'No wayyyy';
+    //textBox.value = 'No wayyyy';
     
+    //Rotate the moon and sun animation
     moonElement.style.transform = 'rotate(' + rotationAngle + 'deg)'
     
     rotationAngle += 180;
     
     sunElement.style.transform = 'rotate(' + rotationAngle + 'deg)'
+    
+    
+    //Dark Mode   [ON]
+    if(triggerFlag % 2 == 0){
+      //Dark-Mode   [ON]
+      //Fade the Moon in
+        moonElement.classList.add('fadeIn');
+        moonElement.classList.remove('fadeOut');
+        moonElement.style.opacity = 1;
 
+
+      //Light-Mode  [OFF]
+      //Fade the Sun out
+        sunElement.classList.remove('fadeIn');
+        sunElement.classList.add('fadeOut');
+        sunElement.style.opacity = 0;
+
+      //Stops any number overflow
+        triggerFlag = 0;
+    }
+  
+
+  //Light Mode  [ON]
+    if(triggerFlag % 2 == 1){
+      //Dark-Mode   [OFF]
+      //Fade the Moon out
+        moonElement.classList.remove('fadeIn');  
+        moonElement.classList.add('fadeOut');
+        moonElement.style.opacity = 0;
+
+
+      //Light-Mode  [ON]
+      //Fade the Sun IN
+        sunElement.classList.remove('fadeOut');
+        sunElement.classList.add('fadeIn');
+        sunElement.style.opacity = 1;
+
+
+      //DEBUG!!
+        textBox.value = triggerFlag;       
+        
+      //Stops any number overflow
+        triggerFlag = 1;
+    }
+
+
+    //Increment the trigger flag counter
+      triggerFlag += 1;
   }
 
-  window.onload = animation0();
 
+  //DEBUG!!! (or keep if you end up liking it!)
+  //Load the toggle animation upon refreshing the page
+    //window.onload = animation0();
+ 
 
 
 //Button Action Event Handlers
@@ -146,8 +201,6 @@
         testFlag = false;
     });
 
-
-     // /*
 
   //Add a general event-listener to the document
     document.addEventListener('keydown', function(event){
@@ -260,7 +313,6 @@
         //Change the color of the "winner!" text to gold
           textBox.style.color = 'gold';
 
-          
         //Display a starburst animation??
           //code here...
       }    
@@ -302,8 +354,6 @@
         newParagraph.className = 'proceedKey';
         newParagraph.id = 'proceedKey';
       
-
-
       //Remove the following!
         addBackContainer.appendChild(newParagraph);    
     }
