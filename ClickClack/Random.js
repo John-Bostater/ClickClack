@@ -6,9 +6,6 @@
 [Description]:
   This JavaScript contains all of the relevant code for the 
   typing test program 'Click Clack' 
-
-[Functions]: 
-
 */
 
 
@@ -240,6 +237,50 @@
 
   //Common English Words 
     function commmonEnglishTest(){
-      return 'Finish this function!!';
+      //Randomized string to be used in text generation
+        let randStr = '';
+
+      //Variability of the random number generation (less recurring words higher the var)
+        let variability = 10000000000000;
+      
+      //Produce 255 unique words for our string
+        for(let i = 0; i < 255; i++){
+          //Generate a new random number, modulo by 256 to produce # between 0 & 255
+            let randNum = Math.floor((Math.random() * variability) % 7);    
+
+          //Switch-case for using the random number to generate a new word
+            switch(randNum){
+              case 0:
+                randStr += 'the '
+                break;
+
+              case 1:
+                randStr += 'be '
+                break;
+
+              case 2:
+                randStr += 'to '
+                break;
+
+              case 3:
+                randStr += 'of '
+                break;
+
+              case 4:
+                randStr += 'it '
+                break;
+
+              case 5:
+                randStr += 'and '
+                break;
+
+              case 6:
+                randStr += 'you '
+                break;
+            }
+        }
+        
+      //Return the string
+        return randStr;
     }
 //---------------------------------------------------------------------------------------- 
