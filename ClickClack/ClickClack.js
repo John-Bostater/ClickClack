@@ -46,9 +46,13 @@
 
 
 //NEW!!!
+//sunElement.style.opacity = 0;
+
+
+//NEW!!!
 //Light/Dark Mode Animation
-  function animation0(){
-    
+function animation0(){
+  
     //DEBUG!!
     //textBox.value = 'No wayyyy';
     
@@ -97,7 +101,7 @@
 
 
       //DEBUG!!
-        textBox.value = triggerFlag;       
+      //  textBox.value = triggerFlag;       
         
       //Stops any number overflow
         triggerFlag = 1;

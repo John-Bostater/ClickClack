@@ -57,10 +57,12 @@ h1{
     background-color: transparent;
     font-weight: bold;
     font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
     -webkit-text-fill-color: white;
     border-color: transparent;
     appearance: none;
     outline: none;
+    cursor: pointer;
 }
 
 
@@ -98,10 +100,8 @@ h1{
       this will give the moon/sun a sunrise/sunset vibe
 */
 
-/*NEW!*/
 
-
-
+/*Light/Dark Mode toggle switch*/
 #light-dark-toggle{
     /*Toggle switch space*/
     width: 80px;
@@ -110,9 +110,6 @@ h1{
     background-color: #1a1a1a;
     position: absolute;
     left: 15px;
-
-
-    /*Other*/
     cursor: pointer;
 }
 
