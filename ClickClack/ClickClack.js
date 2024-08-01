@@ -33,95 +33,6 @@
     let clutterFlag = true;
 
 
-  //Light/Dark Mode Animation
-  //NEW!!!
-    let triggerFlag = 0;
-    const moonElement = document.getElementById('moon');
-    const sunElement = document.getElementById('sun');
-    //const debug10 = document.getElementById('');
-  //NEW!!!!!
-  //NEW!!!
-    let moonRotationAngle = 90;
-    let sunRotationAngle = 90;
-  
-
-  //List of containers that will be removed upon focus of the text box
-//-----------------------------------------------------------
-
-
-//NEW!!!
-sunElement.style.opacity = 0;
-
-
-//NEW!!!
-//Light/Dark Mode Animation
-function animation0(){  
-  //DEBUG!!
-  //textBox.value = 'No wayyyy';
-    
-  //Rotate the moon and sun animation
-    moonElement.style.transform = 'rotate(' + moonRotationAngle + 'deg)'
-    
-    moonRotationAngle += 180;
-    sunRotationAngle += 180;
-    
-    sunElement.style.transform = 'rotate(' + sunRotationAngle + 'deg)'
-    
-    
-    //Dark Mode   [ON]
-    if(triggerFlag % 2 == 0){
-      //Dark-Mode   [ON]
-      //Fade the Moon in
-        moonElement.classList.add('fadeIn');
-        moonElement.classList.remove('fadeOut');
-        moonElement.style.opacity = 1;
-
-
-      //Light-Mode  [OFF]
-      //Fade the Sun out
-        sunElement.classList.remove('fadeIn');
-        sunElement.classList.add('fadeOut');
-        sunElement.style.opacity = 0;
-
-      //Stops any number overflow
-        triggerFlag = 0;
-    }
-  
-
-  //Light Mode  [ON]
-    if(triggerFlag % 2 == 1){
-      //Dark-Mode   [OFF]
-      //Fade the Moon out
-        moonElement.classList.remove('fadeIn');  
-        moonElement.classList.add('fadeOut');
-        moonElement.style.opacity = 0;
-
-
-      //Light-Mode  [ON]
-      //Fade the Sun IN
-        sunElement.classList.remove('fadeOut');
-        sunElement.classList.add('fadeIn');
-        sunElement.style.opacity = 1;
-
-
-      //DEBUG!!
-      //  textBox.value = triggerFlag;       
-        
-      //Stops any number overflow
-        triggerFlag = 1;
-    }
-
-
-    //Increment the trigger flag counter
-      triggerFlag += 1;
-  }
-
-
-  //DEBUG!!! (or keep if you end up liking it!)
-  //Load the toggle animation upon refreshing the page
-    window.onload = animation0();
- 
-
 
 //Button Action Event Handlers
 //-----------------------------------------------------------------------------------------------------
@@ -212,17 +123,20 @@ function animation0(){
 
   //Add a general event-listener to the document
     document.addEventListener('keydown', function(event){
-      const forbiddenKeys = [
-        'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', // Arrow keys
-        'Home', 'End', 'PageUp', 'PageDown'                // Home, End, Page Up, Page Down
-      ];
-
-      if (forbiddenKeys.includes(event.key)) {
-        event.preventDefault(); // Prevent default behavior for forbidden keys
-      }
+      
+      //List of keys the user is NOT allowed to use
+        const forbiddenKeys = [
+          'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
+          'Home', 'End', 'PageUp', 'PageDown', 'Enter'
+        ];
 
 
+      //Stop the user's input of the forbidden keys
+        if(forbiddenKeys.includes(event.key)){
+          event.preventDefault(); 
+        }
 
+        
       //Start the test once!!
         if(testFlag){
           //Make sure the char the user has entered to start the test is NOT recorded
