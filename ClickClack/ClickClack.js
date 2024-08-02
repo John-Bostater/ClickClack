@@ -6,9 +6,6 @@
 [Description]:
   This JavaScript contains all of the relevant code for the 
   typing test program 'Click Clack' 
-
-[Functions]: 
-
 */
 
 

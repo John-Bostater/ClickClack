@@ -13,14 +13,16 @@
   //Light/Dark mode toggle variables
     let triggerFlag = 0;
     let rotationAngle = 90;
-  //Elements
+  //Animation Elements
     const moonElement = document.getElementById('moon');
     const sunElement = document.getElementById('sun');
 
+  //Color Switch Elements
+    const header = document.getElementById('colorSwitch');
 
   //Other stuff here!!
   //Flag for Light or Dark mode
-    let darkMode = true; //Dark Mode On  [default]
+    let darkModeFlag = false; //Dark Mode On  [default]
 
 
     //NEW!!
@@ -63,7 +65,10 @@ function animation0(){
         moonElement.classList.add('fadeIn');
         moonElement.classList.remove('fadeOut');
         moonElement.style.opacity = 1;
-      //Dark Mode Method
+      //Dark-Mode function
+        darkMode();
+      //Set flag
+        darkModeFlag = true;
 
       //Light-Mode  [OFF]
       //Fade the Sun out
@@ -89,6 +94,8 @@ function animation0(){
         sunElement.classList.remove('fadeOut');
         sunElement.classList.add('fadeIn');
         sunElement.style.opacity = 1; 
+      //Light-mode function
+        lightMode();
         
       //Stops any number overflow
         triggerFlag = 1;
@@ -101,20 +108,39 @@ function animation0(){
 
 //Switch the page to 'Light Mode' theme
 function lightMode(){
-    //NEW!!/DEBUG!!
-//    netFlag ++;
-//    alert(netFlag);
-    
-    //DEBUG!!
-    textBox.value = 'HELLO!!!';
+  //
+    localStorage.setItem("netFlag", netFlag++)
+  
+  //DEBUG!!!
+    textBox.value = localStorage.getItem("netFlag");
+  //DEBUG!!
+//    textBox.value = 'HELLO!!!';
 
-    document.getElementById('colorSwitch').style.color = 'red';
+  //Change headers and other text
+    document.getElementById('colorSwitch').style.color = 'black';
+    document.body.style.backgroundColor = 'white';
+    
+  //Change the textboxs
+    textBox.style.color = 'black';
+    textBox.style.borderColor = 'black';
+
+  //
 }
 
 
 //Switch the page to the 'Dark Mode theme'
+  function darkMode(){
+    //Flag Check
+      if(darkModeFlag){
+        //Change headers and other text
+          header.style.color = 'white';
+          document.body.style.backgroundColor = 'black';
 
-
+        //Change the textboxs
+          textBox.style.color = 'white';
+          textBox.style.borderColor = 'white';
+      }
+  }
 //-----------------------------------------------------------
 
 

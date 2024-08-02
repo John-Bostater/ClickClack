@@ -4,13 +4,8 @@
 [Project Start Date]: 5/11/24
 
 [Description]:
-  This file contains: 
-    [Timer] 
-    
-    [Random Text]
-    
-    [DropDown Menu for setting timer]
-
+  This file contains the relevant script for setting up the countdown timer
+  and calculating the wpm count.
 */
 
 
