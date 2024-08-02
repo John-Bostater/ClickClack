@@ -40,11 +40,14 @@ h1{
 }
 
 /*Press any key to proceed*/
-.proceedKey{
+#proceedKey{
     color: white;
-    position: absolute;
 }
 
+/*NEW!!*/
+.hereHe0{
+
+}
 /********************************************************************/
 
 

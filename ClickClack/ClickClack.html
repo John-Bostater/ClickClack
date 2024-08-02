@@ -111,8 +111,14 @@
     <p id="proceedFlag" class="proceedKey">*Press any key to proceed</p>   
     -->
     
-    <!--Typing test input space-->
-    <textarea id="textBox" class='typeTestBox' spellcheck="false" oninput="typeTest()">Text here...</textarea>
+    <!--Typing test container-->
+    <div>
+        <!--Typing test input space-->
+        <textarea id="textBox" class='typeTestBox' spellcheck="false" oninput="typeTest()">Text here...</textarea>
+    
+        <!--Overlay text over the text box!-->
+        <div id="proceedKey">*Press any key to proceed</div>
+    </div>
     
     <!--Space for links to other sites & settings page-->
     <div class="linkContainer">      

@@ -194,15 +194,10 @@
 //Type Test related Functions
 //----------------------------------------------------------------------------------
   function typeTest(){
+    //NEW!!
     //Remove the clutter to put more focus on the text
       
-    ///*
-   // if(clutterFlag){
-    //  removeClutter();
-     // clutterFlag=false;
-    //}
-      //*/
-
+    
     //Capture the string contents of the randomly generated text
       const testTxt = textBox.value.substring(1, textBox.value.length);
       
@@ -249,7 +244,7 @@
       //If the remove clutter flag has stayed the same
      // if(clutterFlag){
         //Elements to be removed
-          const removeMe = document.getElementById('proceedFlag');
+          const removeMe = document.getElementById('proceedKey');
 
         //Remove the following!
           removeMe.parentNode.removeChild(removeMe);
