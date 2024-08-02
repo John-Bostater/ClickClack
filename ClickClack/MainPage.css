@@ -85,7 +85,7 @@ h1{
 
 
 /*Timer Header*/
-.timerHeader{
+#timerHeader{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: initial;
     font-size: 30px;

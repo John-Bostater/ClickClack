@@ -47,9 +47,12 @@ sunElement.style.opacity = 0;
 //Light/Dark Mode
 //-----------------------------------------------------------
 function animation0(){  
-  //DEBUG!!
-    //textBox.value = 'No wayyyy';
-    
+  //NEW IDEA!!!
+  //Instead of rotate have a rise and fall animation for the moon or sun
+  //    moonElement.style.transform = 'translateY(' + 90 + 'px)'
+  //    sunElement.style.transform = 'translateY(' + 90 + 'px)'
+  
+
   //Rotate the moon and sun animation
     moonElement.style.transform = 'rotate(' + rotationAngle + 'deg)'
     
@@ -108,7 +111,7 @@ function animation0(){
 
 //Switch the page to 'Light Mode' theme
 function lightMode(){
-  //
+  //Local stack for communicating between html docs
     localStorage.setItem("netFlag", netFlag++)
   
   //DEBUG!!!
@@ -118,6 +121,8 @@ function lightMode(){
 
   //Change headers and other text
     document.getElementById('colorSwitch').style.color = 'black';
+    document.getElementById('timerHeader').style.color = 'black';
+    dropDown.style.color = 'black';
     document.body.style.backgroundColor = 'white';
     
   //Change the textboxs
@@ -135,6 +140,7 @@ function lightMode(){
         //Change headers and other text
           header.style.color = 'white';
           document.body.style.backgroundColor = 'black';
+          document.getElementById('timerHeader').style.color = 'white';
 
         //Change the textboxs
           textBox.style.color = 'white';
