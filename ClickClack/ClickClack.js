@@ -259,9 +259,9 @@
 
   //Bring back the clutter after the test is done, or the user goes out of focus
     function fillPage(){
-      //Elements to be removed
-        const addBackContainer = document.getElementById('vertical0');
-
+      //Container we will be adding our element back to
+        const addBackContainer = document.getElementById('hereHe0');
+      
       //Recreate the elements to add back to the page!!!
         const newParagraph = document.createElement('p');
         newParagraph.textContent = '*Press any key to proceed'

@@ -42,11 +42,14 @@ h1{
 /*Press any key to proceed*/
 #proceedKey{
     color: white;
+    position: absolute;
 }
 
 /*NEW!!*/
-.hereHe0{
-
+#hereHe0{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
 /********************************************************************/
 

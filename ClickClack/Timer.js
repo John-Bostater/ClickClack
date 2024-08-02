@@ -105,11 +105,12 @@
                 totalWordCount = 0;
 
               //Reset the 'press any key to start a new test' flag
-                testFlag = true; 
+              //Set the flag back to false so the user cannot start a new test upon typing a new key
+                testFlag = false; 
 
               //NEW!!!
-                fillPage();
-                clutterFlag = true;
+               // fillPage();
+               // clutterFlag = true;
 
             } 
           //Else, decrement the timer
