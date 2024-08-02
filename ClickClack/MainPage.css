@@ -54,6 +54,7 @@ h1{
 
 /*DropDown (Select) Styling for all*/
 .dropDown{
+    padding: 5px;
     background-color: transparent;
     font-weight: bold;
     font-size: 20px;
@@ -67,8 +68,6 @@ h1{
 
 /*DropDown container for quick settings*/
 .dropDownContainer{
-    width: 80%;
-    height: 10%;
     padding: 20px;
     border-radius: 10px;
     background-color: #2A2A2A;
@@ -100,14 +99,6 @@ h1{
     font-size: 30px;
     color: white;
 }
-
-
-/*Container for the Light/Dark Mode slider*/
-/*[Animation Description]:
-    - Have the animation have a moon hovering above the slider button and upon slider input
-      the moon will fall behind the slider and a sun will rise in the moon's old spot 
-      this will give the moon/sun a sunrise/sunset vibe
-*/
 
 
 /*Light/Dark Mode toggle switch*/
@@ -259,8 +250,6 @@ h1{
         transform: translateX(45);
     }
 }
-
-
 /****************************************************/
 
 
@@ -283,7 +272,7 @@ h1{
 .liveStatsContainer{
     color: white;
     font-size: 30px;
-    padding: 25px;
+    padding: 40px;
 }
 
 
