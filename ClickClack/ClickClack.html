@@ -11,9 +11,7 @@
 
 
 [TO DO]:
-    -Have an animation for a toggle button between Dark mode and light mode!
-        (default is Moon [i.e. dark mode])
-        HAVE THE ANIMATION TRANSITION FROM MOON TO SUN!!!
+    - Finish the sun and moon sprites and make the toggle switch work!
 
 -->
 
@@ -66,11 +64,15 @@
                 </div>
 
             <!--Toggle switch for the Dark/Light Mode-->
-            <div id="light-dark-toggle" onclick="animation0()"></div>
+            <div id="light-dark-toggle" onclick="animation0()">
+                <div id="toggleBar" class="toggleBar">
+                    <div id="toggleBall" class="toggleBall"></div>
+                </div>
+            </div>
         </div>
     </h1>
 
-    <!--Container for all of the dropdown items-->
+    <!--Container for the dropdowns-->
     <div class="dropDownContainer">
         <!--Select Timer-->
         <span class="spaceMe0">
@@ -112,12 +114,12 @@
     -->
     
     <!--Typing test container-->
-    <div id="hereHe0">
+    <div id="testContainer">
         <!--Typing test input space-->
         <textarea id="textBox" class='typeTestBox' spellcheck="false" oninput="typeTest()">Text here...</textarea>
     
         <!--Overlay text over the text box!-->
-        <div id="proceedKey">*Press any key to proceed</div>
+        <div id="notificationText">*Press any key to begin test</div>
     </div>
     
     <!--Space for links to other sites & settings page-->
@@ -133,7 +135,7 @@
         <!--Support Us-->
         <a href="SupportPage.html" class="link-Style">Support!</a>
 
-        <!--DEBUG!!!-->
+        <!--DEBUG!!!, insert any functions you would like to test here!!-->
         <p class="link-Style" onclick="lightMode()">DEBUG!!</p>
     </div>
 </div>

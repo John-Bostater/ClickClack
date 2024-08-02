@@ -244,7 +244,7 @@
       //If the remove clutter flag has stayed the same
      // if(clutterFlag){
         //Elements to be removed
-          const removeMe = document.getElementById('proceedKey');
+          const removeMe = document.getElementById('notificationText');
 
         //Remove the following!
           removeMe.parentNode.removeChild(removeMe);
@@ -260,13 +260,12 @@
   //Bring back the clutter after the test is done, or the user goes out of focus
     function fillPage(){
       //Container we will be adding our element back to
-        const addBackContainer = document.getElementById('hereHe0');
+        const addBackContainer = document.getElementById('testContainer');
       
       //Recreate the elements to add back to the page!!!
         const newParagraph = document.createElement('p');
-        newParagraph.textContent = '*Press any key to proceed'
-        newParagraph.className = 'proceedKey';
-        newParagraph.id = 'proceedKey';
+        newParagraph.textContent = '*Click the Text Area to proceed'
+        newParagraph.id = 'notificationText';
       
       //Remove the following!
         addBackContainer.appendChild(newParagraph);    

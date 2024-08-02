@@ -16,6 +16,8 @@
   //Animation Elements
     const moonElement = document.getElementById('moon');
     const sunElement = document.getElementById('sun');
+  //NEW!!
+   // sunElement.style.opacity = 0;
 
   //Color Switch Elements
     const header = document.getElementById('colorSwitch');
@@ -111,13 +113,17 @@ function animation0(){
 
 //Switch the page to 'Light Mode' theme
 function lightMode(){
-  //Local stack for communicating between html docs
+  //NEW!!
+  //Move the element back to the left and remove the 'moveRight' animation from the 
+  //classList!! 
+  // [use]: document.getElementById('').classList.remove('moveRight');
+  
+
+  //Local stack for communicating between html docs !
     localStorage.setItem("netFlag", netFlag++)
   
   //DEBUG!!!
     textBox.value = localStorage.getItem("netFlag");
-  //DEBUG!!
-//    textBox.value = 'HELLO!!!';
 
   //Change headers and other text
     document.getElementById('colorSwitch').style.color = 'black';
@@ -128,15 +134,29 @@ function lightMode(){
   //Change the textboxs
     textBox.style.color = 'black';
     textBox.style.borderColor = 'black';
-
-  //
 }
 
 
 //Switch the page to the 'Dark Mode theme'
   function darkMode(){
+    //NEW!!
+    //Add the toggle switch animation
+    //Manual translate
+    //  document.getElementById('toggleBall').style.transform = 'translateX(0px)';
+    //UNCOMMENT ONCE ANIMATION IS DONE!!!
+    //Update the position!
+    //  document.getElementById('toggleBall').style.left = '40px';
+    
+    document.getElementById('toggleBall').classList.add('toggleOn');
+    
+    //Change the color of the switch
+    //      document.getElementById('toggleBar').style.transform = ;
+    
+    
     //Flag Check
-      if(darkModeFlag){
+    if(darkModeFlag){
+        //NEW!!  
+        
         //Change headers and other text
           header.style.color = 'white';
           document.body.style.backgroundColor = 'black';
