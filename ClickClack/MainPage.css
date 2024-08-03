@@ -116,8 +116,8 @@ h1{
 
 /*May have to switch to ID #*/
 /*Toggle Bar (On = Blue, Off = Red)*/
-.toggleBar{
-    background-color: white;
+#toggleBar{
+    background-color: gray;
     position: absolute;
     top: 20%;
     left: 10%;
@@ -128,8 +128,8 @@ h1{
 
 
 /*Toggle Switch Ball*/
-.toggleBall{
-    background-color: blue;
+#toggleBall{
+    background-color: purple;
     position: absolute;
     width: 20px;
     height: 20px;
@@ -242,12 +242,28 @@ h1{
     transform: translateX(45px);
 }
 
+
+/*Translate Right to Left (Ease)*/
+.toggleOff{
+    animation: moveLeft 1s ease;
+    transform: translateX(0px);
+}
+
 @keyframes moveRight{
     from{
         transform: translateX(0px);
     }
     to{        
-        transform: translateX(45);
+        transform: translateX(45px);
+    }
+}
+
+@keyframes moveLeft{
+    from{
+        transform: translateX(45px);
+    }
+    to{        
+        transform: translateX(0px);
     }
 }
 /****************************************************/

@@ -118,6 +118,14 @@ function lightMode(){
   //classList!! 
   // [use]: document.getElementById('').classList.remove('moveRight');
   
+  //NEW!!
+    document.getElementById('toggleBall').classList.add('toggleOff');
+  //NEW!!
+  //Remove the toggle on animation
+    document.getElementById('toggleBall').classList.remove('toggleOn');
+  //NEW!!
+    document.getElementById('toggleBar').style.backgroundColor = 'white';
+
 
   //Local stack for communicating between html docs !
     localStorage.setItem("netFlag", netFlag++)
@@ -147,7 +155,14 @@ function lightMode(){
     //Update the position!
     //  document.getElementById('toggleBall').style.left = '40px';
     
-    document.getElementById('toggleBall').classList.add('toggleOn');
+    //NEW!!
+    //Toggle Dark-Mode on animation
+      document.getElementById('toggleBall').classList.add('toggleOn');
+    //Remove the toggle-off animation
+      document.getElementById('toggleBall').classList.remove('toggleOff');
+   //NEW!!
+      document.getElementById('toggleBar').style.backgroundColor = 'lightblue';
+
     
     //Change the color of the switch
     //      document.getElementById('toggleBar').style.transform = ;
