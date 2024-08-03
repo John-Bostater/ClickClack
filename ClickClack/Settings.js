@@ -32,10 +32,40 @@
 //-------------------------------------------------------------
 
 
+//NEW!!
+debugFlag = false;
+//localStorage.setItem('debug-flag', debugFlag);
 
-///DEBUG!!
-//alert(netFlag);
-//textBox.value = netFlag;
+
+//READ ME SUPER IMPORTANT OMG!!!
+//NEW!!
+//On loading of the window check to see if the settings flag has been activated 
+// if flag == true activate [setSettings()] function which will apply the new settings
+// [Do this via localStorage]
+
+//DEBUG!!!
+//NEW!!
+function checkFlag(){
+  //localStorage.setItem('debug-flag', debugFlag);
+  alert(localStorage.getItem('debug-flag'));
+}
+
+//Reset all settings back to default (Dark Mode)
+//[Set settingsFlag = false;]
+function falseFlag(){
+  debugFlag = true;
+  localStorage.setItem('debug-flag', debugFlag);
+}
+
+
+//Use this function for setting the various settings!!
+//[set settingsFlag = true;]
+function trueFlag(){
+  debugFlag = false;
+  localStorage.setItem('debug-flag', debugFlag);
+}
+
+
 
 
 //DEBUG!!! (or keep if you end up liking it!)
@@ -124,7 +154,7 @@ function lightMode(){
   //Remove the toggle on animation
     document.getElementById('toggleBall').classList.remove('toggleOn');
   //NEW!!
-    document.getElementById('toggleBar').style.backgroundColor = 'white';
+    document.getElementById('toggleBar').style.backgroundColor = 'lightblue';
 
 
   //Local stack for communicating between html docs !
@@ -161,7 +191,7 @@ function lightMode(){
     //Remove the toggle-off animation
       document.getElementById('toggleBall').classList.remove('toggleOff');
    //NEW!!
-      document.getElementById('toggleBar').style.backgroundColor = 'lightblue';
+      document.getElementById('toggleBar').style.backgroundColor = '#3A3A3A';
 
     
     //Change the color of the switch
