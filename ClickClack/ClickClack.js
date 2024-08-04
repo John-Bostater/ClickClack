@@ -31,9 +31,18 @@
 //-----------------------------------------------------------
 
 
+//NEW!!
+//  localStorage.setItem('settingsFlag', false);
 
-//Debug zone
-//
+//NEW!!!
+//Apply any custom settings to the page if the flag has been activated!
+//if(localStorage.getItem('settingsFlag')){
+  //DEBUG!!
+  //  textBox.value = 'What the heck!';
+  
+  //Call upon the 'apply settings' function
+   // applySettings();
+//s}
 
 
 
@@ -139,8 +148,8 @@
 
   //Add an event-listener for the second dropdown menu that will change testKey
     dropDown.addEventListener('click', () => {
-      //Set the test Key to the new value
-        testKey = parseInt(dropDown.value, 10);
+      //Set the test Key to the new value {convert from string to number}
+        testKey = Number(dropDown.value);
     });
 
 

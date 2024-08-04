@@ -174,16 +174,31 @@
             case 3:
                 return 'Infinite';
            
-        
+
+          //Custom
+            case 4:
+              //Call upon the method to set the custom timer via user input!
+                return customTimer();
+
+
           //DELETE WHEN DONE!!
           //DEBUG!!!!
-            case 4:
+            case 5:
                 return 5;
            
           //Have a case for "customize timer!!"
           
+          
         }
       //Switch case statement that will update the global variable 'countdown'
+    }
+
+
+  //NEW!!!
+  //Function loaded when the user selects 'Custom Time' for the dropdown!
+    function customTimer(){
+      //replace the dropdown menu with a textfield for the user to enter their data???
+
     }
 //---------------------------------------------------------------------------------------- 
 

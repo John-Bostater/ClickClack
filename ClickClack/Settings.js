@@ -34,7 +34,7 @@
 
 //NEW!!
 debugFlag = false;
-//localStorage.setItem('debug-flag', debugFlag);
+//localStorage.setItem('settingsFlag', debugFlag);
 
 
 //READ ME SUPER IMPORTANT OMG!!!
@@ -46,20 +46,20 @@ debugFlag = false;
 //DEBUG!!!
 //NEW!!
 function checkFlag(){
-  //localStorage.setItem('debug-flag', debugFlag);
-  alert(localStorage.getItem('debug-flag'));
+  //localStorage.setItem('settingsFlag', debugFlag);
+  alert(localStorage.getItem('settingsFlag'));
 }
 //Reset all settings back to default (Dark Mode)
 //[Set settingsFlag = false;]
 function falseFlag(){
   debugFlag = true;
-  localStorage.setItem('debug-flag', debugFlag);
+  localStorage.setItem('settingsFlag', debugFlag);
 }
 //Use this function for setting the various settings!!
 //[set settingsFlag = true;]
 function trueFlag(){
   debugFlag = false;
-  localStorage.setItem('debug-flag', debugFlag);
+  localStorage.setItem('settingsFlag', debugFlag);
 }
 
 
@@ -141,10 +141,6 @@ function lightMode(){
   //classList!! 
   // [use]: document.getElementById('').classList.remove('moveRight');
   
-  //NEW!!
-    darkModeFlag = false;
-
-
   //Add the toggle off animation
     document.getElementById('toggleBall').classList.add('toggleOff');
   //Remove the toggle on animation
@@ -161,6 +157,9 @@ function lightMode(){
   //Change the textboxs
     textBox.style.color = 'black';
     textBox.style.borderColor = 'black';
+
+  //Set the flag back to false
+    darkModeFlag = false;
 }
 
 
@@ -185,6 +184,23 @@ function lightMode(){
     //Set the dark-mode flag to true
       darkModeFlag = true;
   }
+
+  //Apply the settings the user has entered into the dropdown!
+    function applySettings(){
+      //Check if the flag has been activated! (this will be done if interaction with ANY dropdown)
+        if(localStorage.getItem('settingsFlag')){
+          //If the flag has been activated use the switch-case to parse the 'changedSettings'
+
+          //do a for-loop that will parse the array for the array's length
+
+            //Call upon the switch case to apply the settings!
+          //DEBUG!!
+          textBox.value = 'ayoo 123 4 ';
+
+        }
+      
+      //if flag == false 'do nothing!'
+    }
 //-----------------------------------------------------------
 
 
@@ -192,10 +208,20 @@ function lightMode(){
 //Custom Settings
 //-----------------------------------------------------------
   //Change the background color of the doc! (purp, red, etc!)
+  function changeBackgroundColor(){
+    //Get the dropdown value selected and set the local storage data!
+    
+  }
 
 
   //Change the text field's font color!
+  function changeFontColor(){
+    //Get the dropdown value and set the local storage data
 
+  }
 
   //Change the timer!
+  function customTimer(){
+
+  }
 //-----------------------------------------------------------

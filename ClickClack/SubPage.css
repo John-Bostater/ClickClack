@@ -1,0 +1,75 @@
+/*
+[Author]: John Bostater
+
+[Project Start Date]: 
+*/
+
+
+/*Containers*/
+/***************************************************/
+/*Encapsulating vertical alignment*/
+.vertical0{
+    text-align: center;
+}
+
+/*Container for 'go back' button*/
+.container0{
+    padding: 10px;
+}
+
+.venmoLogo{
+    width: 150px;
+    height: 150px;
+}
+/***************************************************/
+
+
+/*DropDown*/
+/***************************************************/
+.dropDown{
+    
+}
+/***************************************************/
+
+
+/*Buttons*/
+/***************************************************/
+.goBack{
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-text-fill-color: black;
+    font-size: 20px;
+}
+
+.goBack:hover{
+    background-color: lightblue;
+    cursor: pointer;
+}
+/***************************************************/
+
+
+/*Text Styling*/
+/***************************************************/
+body{
+    font-size: 24px;
+    background-color: black;
+    cursor: default;
+}
+
+h1{
+    font-size: 72px;
+    -webkit-text-fill-color: white;
+}
+
+/*Venmo*/
+h2{
+    font-size: 34px;
+    -webkit-text-fill-color: lightblue;
+}
+
+/*YouTube*/
+h3{
+    font-size: 34px;
+    -webkit-text-fill-color: red;
+}
+/***************************************************/

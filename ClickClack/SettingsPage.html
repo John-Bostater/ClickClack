@@ -26,14 +26,31 @@
     <title>SettingsPage</title>
 
     <!--CSS Link-->
-    <link rel="stylesheet" href="SupportPage.css">
+    <link rel="stylesheet" href="SubPage.css">
 
     <!--JS Links-->
         <!--Script for adjusting the settings-->
         <script src="Settings.js" defer></script>
 </head>
 
-<h1>Settings</h1>
+
+<!--Encapsulating vertical alignment-->
+<div class="vertical0">
+    <!--Main Header of the page-->
+    <h1>Settings</h1>
+    
+    <!--Drop Downs for specific settings-->
+    <select id="backgroundColor">
+        <option>Hello World!</option>
+    </select>
+
+
+    <!--Buttons for saving new settings, going back to default, etc!-->
+    <button onclick="applySettings()">Apply Settings</button>
+
+
+</div>
+
 
 
 <!--Have this function execute upon EVERY! settings change/action-event handler-->
