@@ -49,15 +49,12 @@ function checkFlag(){
   //localStorage.setItem('debug-flag', debugFlag);
   alert(localStorage.getItem('debug-flag'));
 }
-
 //Reset all settings back to default (Dark Mode)
 //[Set settingsFlag = false;]
 function falseFlag(){
   debugFlag = true;
   localStorage.setItem('debug-flag', debugFlag);
 }
-
-
 //Use this function for setting the various settings!!
 //[set settingsFlag = true;]
 function trueFlag(){
@@ -67,11 +64,9 @@ function trueFlag(){
 
 
 
-
 //DEBUG!!! (or keep if you end up liking it!)
 //Load the toggle animation upon refreshing the page
 window.onload = animation0();
-
 //NEW!!!
 sunElement.style.opacity = 0;
 
@@ -84,12 +79,10 @@ function animation0(){
   //    moonElement.style.transform = 'translateY(' + 90 + 'px)'
   //    sunElement.style.transform = 'translateY(' + 90 + 'px)'
   
-
+  
   //Rotate the moon and sun animation
     moonElement.style.transform = 'rotate(' + rotationAngle + 'deg)'
-    
     rotationAngle += 180;
-    
     sunElement.style.transform = 'rotate(' + rotationAngle + 'deg)'
     
     
@@ -149,26 +142,22 @@ function lightMode(){
   // [use]: document.getElementById('').classList.remove('moveRight');
   
   //NEW!!
+    darkModeFlag = false;
+
+
+  //Add the toggle off animation
     document.getElementById('toggleBall').classList.add('toggleOff');
-  //NEW!!
   //Remove the toggle on animation
     document.getElementById('toggleBall').classList.remove('toggleOn');
-  //NEW!!
+  //Change the toggle bar's color
     document.getElementById('toggleBar').style.backgroundColor = 'lightblue';
-
-
-  //Local stack for communicating between html docs !
-    localStorage.setItem("netFlag", netFlag++)
   
-  //DEBUG!!!
-    textBox.value = localStorage.getItem("netFlag");
-
-  //Change headers and other text
+  //Change headers and other text to their respective colors
     document.getElementById('colorSwitch').style.color = 'black';
     document.getElementById('timerHeader').style.color = 'black';
+    document.getElementById('notificationText').style.color = 'black';
     dropDown.style.color = 'black';
-    document.body.style.backgroundColor = 'white';
-    
+    document.body.style.backgroundColor = 'white';  
   //Change the textboxs
     textBox.style.color = 'black';
     textBox.style.borderColor = 'black';
@@ -177,45 +166,36 @@ function lightMode(){
 
 //Switch the page to the 'Dark Mode theme'
   function darkMode(){
-    //NEW!!
-    //Add the toggle switch animation
-    //Manual translate
-    //  document.getElementById('toggleBall').style.transform = 'translateX(0px)';
-    //UNCOMMENT ONCE ANIMATION IS DONE!!!
-    //Update the position!
-    //  document.getElementById('toggleBall').style.left = '40px';
-    
-    //NEW!!
+    //Change headers and other text
+      header.style.color = 'white';
+      document.body.style.backgroundColor = 'black';
+  
     //Toggle Dark-Mode on animation
       document.getElementById('toggleBall').classList.add('toggleOn');
     //Remove the toggle-off animation
       document.getElementById('toggleBall').classList.remove('toggleOff');
-   //NEW!!
+    //Change respective element's colors
       document.getElementById('toggleBar').style.backgroundColor = '#3A3A3A';
+      document.getElementById('timerHeader').style.color = 'white';
+      document.getElementById('notificationText').style.color = 'white';
+    //Change the textboxs
+      textBox.style.color = 'white';
+      textBox.style.borderColor = 'white';
 
-    
-    //Change the color of the switch
-    //      document.getElementById('toggleBar').style.transform = ;
-    
-    
-    //Flag Check
-    if(darkModeFlag){
-        //NEW!!  
-        
-        //Change headers and other text
-          header.style.color = 'white';
-          document.body.style.backgroundColor = 'black';
-          document.getElementById('timerHeader').style.color = 'white';
-
-        //Change the textboxs
-          textBox.style.color = 'white';
-          textBox.style.borderColor = 'white';
-      }
+    //Set the dark-mode flag to true
+      darkModeFlag = true;
   }
 //-----------------------------------------------------------
 
 
 
-//Other Settings
+//Custom Settings
 //-----------------------------------------------------------
+  //Change the background color of the doc! (purp, red, etc!)
+
+
+  //Change the text field's font color!
+
+
+  //Change the timer!
 //-----------------------------------------------------------

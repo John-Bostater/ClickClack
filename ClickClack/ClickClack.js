@@ -9,7 +9,7 @@
 */
 
 
-//Global variables!
+//Global variables
 //-----------------------------------------------------------
   //Used for calculating the WPM
     let totalWordCount = 0;
@@ -28,27 +28,12 @@
 
   //Flag for 'removing the clutter'
     let clutterFlag = true;
+//-----------------------------------------------------------
 
 
 
-//Button Action Event Handlers
-//-----------------------------------------------------------------------------------------------------
-  //Support Me! 
-    //(load another page that had link to other websites and other info)
-
-
-  //About the creator
-
-
-  //Options/Settings
-    //allow the user to change more features of the click click display/menu
-    //This button will load a new html doc that allows the user to change the 
-    //values of 'ActiveLib2.js' which will be another defer file in 'ClickClack.html' that will have 
-    //action event-handlers set for all of the 'SettingsPage.html' for the user to change more features
-    
-    //The second defer file 'ActiveLib2.js' will simply set all of the global variables it has to
-
-//-----------------------------------------------------------------------------------------------------
+//Debug zone
+//
 
 
 
@@ -56,12 +41,17 @@
 //-----------------------------------------------------------------------------------------------------
   //Reset the total count to 0 when timer done
     textBox.addEventListener('blur', () => {
-      //NEW!!!
+      //If the notification has NOT been removed, remove it
         if(!clutterFlag){
           fillPage();
-
           clutterFlag = true;
         }
+
+      //Change the notification color based on darkmode or light mode
+        if(!darkModeFlag){
+          document.getElementById('notificationText').style.color = 'black';
+        }
+
 
       //If the text area is disabled, re-enable it  
         if(textBox.disabled){
@@ -73,29 +63,22 @@
 
           //Reset the timer
             resetTimer();
-        }
-
-      //If the text box is disable, set the total word count to 0
-        if(textBox.disabled){
+      
           //Reset the total word count
             totalWordCount = 0;
         }      
     });
 
-  //NEW!!
-  textBox.addEventListener('focus', () => {
-    //NEW!!
-    //Set the clutter flag back to true?
-      //clutterFlag = true;
 
-    //NEW!!
-      if(clutterFlag){
-        removeClutter();
-        clutterFlag=false;
-      }
+  //Remove notifications
+    textBox.addEventListener('focus', () => {
+      //If the flag is activated, remove the notification
+        if(clutterFlag){
+          removeClutter();
+          clutterFlag = false;
+        }
 
-  });
-
+    });
 
 
   //Start the test upon user input
@@ -152,7 +135,7 @@
             testFlag = false;
         }
     });
-//*/
+
 
   //Add an event-listener for the second dropdown menu that will change testKey
     dropDown.addEventListener('click', () => {
@@ -170,6 +153,26 @@
         if(isTimerRunning){
           resetTimer();
         }
+
+      //Load a function that will allow the user to manually
+      //Enter their own time upon the dropdown's value being
+      //'Custom Time' (or something to that effect)
+        if(timerDropDown.value == 'Custom Time'){
+          //Call upon the function for setting the time
+            customTime();
+
+          //IMPLEMENT STUFF BELOW THIS TO THE FUNCTION ABOVE?!?!?!
+            //Get the key of the selected time
+             timerKey = timerDropDown.value;
+            //Set the timer's display
+              timerDisplay.textContent = setTimer(timerKey);
+            //Set the timer
+              countdown = setTimer(timerKey);
+
+          //Stop parsing code
+            return;
+        }
+
 
       //Get the key of the selected time
         timerKey = timerDropDown.value;

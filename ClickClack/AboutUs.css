@@ -5,6 +5,17 @@
 */
 
 
+
+/*Text Font and Styling*/
+/*************************************/
+body{
+    background-color: black;
+    -webkit-text-fill-color: white;
+}
+
+/*************************************/
+
+
 /*Containers*/
 /*************************************/
 .vertical0{
@@ -18,8 +29,16 @@
 /*Buttons*/
 /*************************************/
 .goBack{
-    width: 100px;
-    height: 100px;
-    background-color: blue;
+    position: absolute;
+    width: 75px;
+    height: 45px;
+    border-radius: 10px;
+    -webkit-text-fill-color: black;
+    font-size: 15px;
+}
+
+.goBack:hover{
+    background-color: lightblue;
+    cursor: pointer;
 }
 /*************************************/
