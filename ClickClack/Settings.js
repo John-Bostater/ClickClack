@@ -185,10 +185,11 @@ function lightMode(){
       darkModeFlag = true;
   }
 
+  
   //Apply the settings the user has entered into the dropdown!
     function applySettings(){
       //Check if the flag has been activated! (this will be done if interaction with ANY dropdown)
-        if(localStorage.getItem('settingsFlag')){
+     //   if(localStorage.getItem('settingsFlag')){
           //If the flag has been activated use the switch-case to parse the 'changedSettings'
 
           //do a for-loop that will parse the array for the array's length
@@ -197,12 +198,11 @@ function lightMode(){
           //DEBUG!!
           textBox.value = 'ayoo 123 4 ';
 
-        }
+       // }
       
       //if flag == false 'do nothing!'
     }
 //-----------------------------------------------------------
-
 
 
 //Custom Settings

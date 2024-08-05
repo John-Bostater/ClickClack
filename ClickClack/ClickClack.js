@@ -36,15 +36,15 @@
 
 //NEW!!!
 //Apply any custom settings to the page if the flag has been activated!
-//if(localStorage.getItem('settingsFlag')){
-  //DEBUG!!
-  //  textBox.value = 'What the heck!';
+//if(localStorage.getItem('settingsFlag') == null){
+  //create the local storage item if it does not already exist!
+ //   localStorage.setItem('settingsFlag', false);
+//}
   
+//if(localStorage.getItem('settingsFlag') == true){
   //Call upon the 'apply settings' function
-   // applySettings();
-//s}
-
-
+  //  applySettings();
+//}
 
 //Action-Event Handling
 //-----------------------------------------------------------------------------------------------------
