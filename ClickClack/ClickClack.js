@@ -48,11 +48,11 @@
 //If the settings have been changed, apply the new settings
 if(localStorage.getItem('settingsFlag') == 'true'){
   //DEBUG!
- //   textBox.textContent = localStorage.getItem('backGroundColor');
+   // textBox.textContent = localStorage.getItem('backGroundColor');
 // THIS WORKS!!
 
   //Apply the settings if the flag returns true
-    applySettings();
+ //   applySettings();
 }
 
 
@@ -300,7 +300,7 @@ if(localStorage.getItem('settingsFlag') == 'true'){
   //Apply the settings the user has entered into the dropdown!
     function applySettings(){
       //Check if the flag has been activated! (this will be done if interaction with ANY dropdown)
-        if(localStorage.getItem('settingsFlag') == 'true'){
+     //   if(localStorage.getItem('settingsFlag') == 'true'){
           //If the flag has been activated use the switch-case to parse the 'changedSettings'
             //
 
@@ -350,7 +350,7 @@ if(localStorage.getItem('settingsFlag') == 'true'){
 
             //Call upon the switch case to apply the settings!
 
-        }
+       // }
         
       //if flag == false 'do nothing!'
     }

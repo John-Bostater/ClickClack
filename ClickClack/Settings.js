@@ -21,7 +21,7 @@
     const header = document.getElementById('colorSwitch');
 
   //Array containing all of the user settings change
-    let commandArray = [];
+    //let commandArray;
 
   //Other stuff here!!
   //Flag for Light or Dark mode
@@ -62,14 +62,14 @@ function trueFlag(){
     localStorage.setItem('settingsFlag', true);
 
   //DEBUG!!
-    commandArray = ['0', '1'];
+    //let commandArray = ['0', '1'];
 
   //NEW!!!
-    const readArr= JSON.stringify(commandArray);
+   // const readArr= JSON.stringify(commandArray);
 
     
   //[Update the name of the function if this stuff works out well!!]
-    localStorage.setItem('commandArray', readArr);
+    localStorage.setItem('commandArray', '2');
 }
 
 
@@ -223,7 +223,7 @@ function animation0(){
       //NEW!!
       localStorage.setItem('settingsFlag', true);
       localStorage.setItem('backGroundColor', 'blue');
-//      document.body.style.backgroundColor = 'blue';
+    //  document.body.style.backgroundColor = 'blue';
 
     }
 
