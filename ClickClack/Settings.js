@@ -16,12 +16,15 @@
   //Animation Elements
     const moonElement = document.getElementById('moon');
     const sunElement = document.getElementById('sun');
+
+  //DropDown Setting(s) Elements
+    const backgroundDrop = document.getElementById('backgroundColorDrop');
   
   //Color Switch Elements
     const header = document.getElementById('colorSwitch');
 
   //Array containing all of the user settings change
-    //let commandArray;
+    let commandArray = [];
 
   //Other stuff here!!
   //Flag for Light or Dark mode
@@ -58,20 +61,8 @@ function falseFlag(){
 //Use this function for setting the various settings!!
 //[set settingsFlag = true;]
 function trueFlag(){
-  //debugFlag = false;
-    localStorage.setItem('settingsFlag', true);
-
-  //DEBUG!!
-    //let commandArray = ['0', '1'];
-
-  //NEW!!!
-   // const readArr= JSON.stringify(commandArray);
-
-    
-  //[Update the name of the function if this stuff works out well!!]
-    localStorage.setItem('commandArray', '2');
+  
 }
-
 
 
 //DEBUG!!! (or keep if you end up liking it!)
@@ -212,19 +203,46 @@ function animation0(){
 //-----------------------------------------------------------
 
 
+
+//NEW!!
+//Action-Event Listeners
+//-----------------------------------------------------------
+          
+//  backgroundDrop.addEventListener('click', () => {
+    //localStorage.setItem('backGroundColor', 'orange');
+    //  document.body.style.backgroundColor = backgroundDrop.value;
+  
+  //});
+
+
+//-----------------------------------------------------------
+
+
+
 //Custom Settings
 //-----------------------------------------------------------
   //Change the background color of the doc! (purp, red, etc!)
     function changeBackgroundColor(){
       //Get the dropdown value selected and set the local storage data!
-     /// textBox.textContent= document.getElementById('backgroundColorDrop').textContent;
+      //textBox.textContent= document.getElementById('backgroundColorDrop').value;
       // = 'Yes!';
 
-      //NEW!!
-      localStorage.setItem('settingsFlag', true);
-      localStorage.setItem('backGroundColor', 'blue');
-    //  document.body.style.backgroundColor = 'blue';
+      //Set the background color data to the dropdown value
+        localStorage.setItem('backGroundColor', backgroundDrop.value);
 
+      //NEW!!
+      //localStorage.setItem('settingsFlag', true);
+        document.body.style.backgroundColor = backgroundDrop.value;
+    
+      //Update the settings Flag
+        localStorage.setItem('settingsFlag', true);
+ 
+      //Push the command to update the background color to the array
+        commandArray.push('0');
+
+
+      //Update the array in local storage
+        updateCommandArr();  
     }
 
 
@@ -238,5 +256,15 @@ function animation0(){
   //Change the timer!
     function customTimer(){
 
+    }
+
+
+  //NEW!!
+    function updateCommandArr(){
+      //Final commands to be executed
+        const readArr= JSON.stringify(commandArray);    
+    
+      //[Update the name of the function if this stuff works out well!!]
+        localStorage.setItem('commandArray', readArr);    
     }
 //-----------------------------------------------------------
