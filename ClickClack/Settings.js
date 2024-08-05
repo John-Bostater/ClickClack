@@ -16,25 +16,25 @@
   //Animation Elements
     const moonElement = document.getElementById('moon');
     const sunElement = document.getElementById('sun');
-  //NEW!!
-   // sunElement.style.opacity = 0;
-
+  
   //Color Switch Elements
     const header = document.getElementById('colorSwitch');
+
+  //Array containing all of the user settings change
+    let commandArray = [];
 
   //Other stuff here!!
   //Flag for Light or Dark mode
     let darkModeFlag = false; //Dark Mode On  [default]
-
-
-    //NEW!!
-    let netFlag = 0;
+  //Flag for the iteration
+    let firstIter = true;
 //-------------------------------------------------------------
 
 
 //NEW!!
-debugFlag = false;
+//debugFlag = false;
 //localStorage.setItem('settingsFlag', debugFlag);
+
 
 
 //READ ME SUPER IMPORTANT OMG!!!
@@ -52,23 +52,40 @@ function checkFlag(){
 //Reset all settings back to default (Dark Mode)
 //[Set settingsFlag = false;]
 function falseFlag(){
-  debugFlag = true;
-  localStorage.setItem('settingsFlag', debugFlag);
+//  debugFlag = true;
+  localStorage.setItem('settingsFlag', false);
 }
 //Use this function for setting the various settings!!
 //[set settingsFlag = true;]
 function trueFlag(){
-  debugFlag = false;
-  localStorage.setItem('settingsFlag', debugFlag);
+  //debugFlag = false;
+    localStorage.setItem('settingsFlag', true);
+
+  //DEBUG!!
+    commandArray = ['0', '1'];
+
+  //NEW!!!
+    const readArr= JSON.stringify(commandArray);
+
+    
+  //[Update the name of the function if this stuff works out well!!]
+    localStorage.setItem('commandArray', readArr);
 }
 
 
 
 //DEBUG!!! (or keep if you end up liking it!)
 //Load the toggle animation upon refreshing the page
-window.onload = animation0();
-//NEW!!!
-sunElement.style.opacity = 0;
+
+//Default for animation
+  moonElement.style.opacity = 0;
+  sunElement.style.opacity = 0;
+
+//If the user has not updated any of the settings, load default darkMode
+if(localStorage.getItem('settingsFlag') == 'false'){
+  //Load the darkMode
+    window.onload = animation0();
+}
 
 
 //Light/Dark Mode
@@ -101,11 +118,19 @@ function animation0(){
       //Light-Mode  [OFF]
       //Fade the Sun out
         sunElement.classList.remove('fadeIn');
-        sunElement.classList.add('fadeOut');
         sunElement.style.opacity = 0;
+
+      //Add the sun's fade-out animation upon the second iteration
+        if(!firstIter){
+          //Fade the sun out
+            sunElement.classList.add('fadeOut');
+        }      
 
       //Stops any number overflow
         triggerFlag = 0;
+
+      //set the first iteration flag to false
+        firstIter = false;
     }
 
 
@@ -135,32 +160,32 @@ function animation0(){
 
 
 //Switch the page to 'Light Mode' theme
-function lightMode(){
-  //NEW!!
-  //Move the element back to the left and remove the 'moveRight' animation from the 
-  //classList!! 
-  // [use]: document.getElementById('').classList.remove('moveRight');
-  
-  //Add the toggle off animation
-    document.getElementById('toggleBall').classList.add('toggleOff');
-  //Remove the toggle on animation
-    document.getElementById('toggleBall').classList.remove('toggleOn');
-  //Change the toggle bar's color
-    document.getElementById('toggleBar').style.backgroundColor = 'lightblue';
-  
-  //Change headers and other text to their respective colors
-    document.getElementById('colorSwitch').style.color = 'black';
-    document.getElementById('timerHeader').style.color = 'black';
-    document.getElementById('notificationText').style.color = 'black';
-    dropDown.style.color = 'black';
-    document.body.style.backgroundColor = 'white';  
-  //Change the textboxs
-    textBox.style.color = 'black';
-    textBox.style.borderColor = 'black';
+  function lightMode(){
+    //NEW!!
+    //Move the element back to the left and remove the 'moveRight' animation from the 
+    //classList!! 
+    // [use]: document.getElementById('').classList.remove('moveRight');
+    
+    //Add the toggle off animation
+      document.getElementById('toggleBall').classList.add('toggleOff');
+    //Remove the toggle on animation
+      document.getElementById('toggleBall').classList.remove('toggleOn');
+    //Change the toggle bar's color
+      document.getElementById('toggleBar').style.backgroundColor = 'lightblue';
+    
+    //Change headers and other text to their respective colors
+      document.getElementById('colorSwitch').style.color = 'black';
+      document.getElementById('timerHeader').style.color = 'black';
+      document.getElementById('notificationText').style.color = 'black';
+      dropDown.style.color = 'black';
+      document.body.style.backgroundColor = 'white';  
+    //Change the textboxs
+      textBox.style.color = 'black';
+      textBox.style.borderColor = 'black';
 
-  //Set the flag back to false
-    darkModeFlag = false;
-}
+    //Set the flag back to false
+      darkModeFlag = false;
+  }
 
 
 //Switch the page to the 'Dark Mode theme'
@@ -184,44 +209,34 @@ function lightMode(){
     //Set the dark-mode flag to true
       darkModeFlag = true;
   }
-
-  
-  //Apply the settings the user has entered into the dropdown!
-    function applySettings(){
-      //Check if the flag has been activated! (this will be done if interaction with ANY dropdown)
-     //   if(localStorage.getItem('settingsFlag')){
-          //If the flag has been activated use the switch-case to parse the 'changedSettings'
-
-          //do a for-loop that will parse the array for the array's length
-
-            //Call upon the switch case to apply the settings!
-          //DEBUG!!
-          textBox.value = 'ayoo 123 4 ';
-
-       // }
-      
-      //if flag == false 'do nothing!'
-    }
 //-----------------------------------------------------------
 
 
 //Custom Settings
 //-----------------------------------------------------------
   //Change the background color of the doc! (purp, red, etc!)
-  function changeBackgroundColor(){
-    //Get the dropdown value selected and set the local storage data!
-    
-  }
+    function changeBackgroundColor(){
+      //Get the dropdown value selected and set the local storage data!
+     /// textBox.textContent= document.getElementById('backgroundColorDrop').textContent;
+      // = 'Yes!';
+
+      //NEW!!
+      localStorage.setItem('settingsFlag', true);
+      localStorage.setItem('backGroundColor', 'blue');
+//      document.body.style.backgroundColor = 'blue';
+
+    }
 
 
   //Change the text field's font color!
-  function changeFontColor(){
-    //Get the dropdown value and set the local storage data
+    function changeFontColor(){
+      //Get the dropdown value and set the local storage data
 
-  }
+    }
+
 
   //Change the timer!
-  function customTimer(){
+    function customTimer(){
 
-  }
+    }
 //-----------------------------------------------------------

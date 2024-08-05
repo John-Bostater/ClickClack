@@ -40,26 +40,25 @@
     <h1>Settings</h1>
     
     <!--Drop Downs for specific settings-->
-    <select id="backgroundColor">
-        <option>Hello World!</option>
+    <select id="backgroundColorDrop" class="dropDown">
+        <option value="0">blue</option>
+        <option value="1">red</option>
+        <option value="2">orange</option>
     </select>
 
 
+    
+    <!--Buttons for functionality-->
+    <hr>
     <!--Buttons for saving new settings, going back to default, etc!-->
-    <button onclick="applySettings()">Apply Settings</button>
-
+    <button onclick="changeBackgroundColor()">Apply Settings</button>
+    <button onclick="trueFlag()">Test Me!!</button>
+    <button onclick="falseFlag()">RESET</button>
+    
+    <!--Go back to 'Click Clack'-->
+    <a href="ClickClack.html">
+        <button>Click Clack</button>
+    </a>
 
 </div>
-
-
-
-<!--Have this function execute upon EVERY! settings change/action-event handler-->
-
-
-<!--DEBUG! BUTTON!!!-->
-<button onclick="trueFlag()">Test Me!!</button>
-<button onclick="falseFlag()">Test Me</button>
-
-<a href="ClickClack.html">
-    <button>Click Clack</button>
-</a>
+</html>

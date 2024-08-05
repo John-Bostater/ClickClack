@@ -6,6 +6,7 @@
 [Description]:
   This JavaScript contains all of the relevant code for the 
   typing test program 'Click Clack' 
+
 */
 
 
@@ -36,15 +37,25 @@
 
 //NEW!!!
 //Apply any custom settings to the page if the flag has been activated!
-//if(localStorage.getItem('settingsFlag') == null){
+//if(localStorage.getItem('settingsFlag')) {
   //create the local storage item if it does not already exist!
- //   localStorage.setItem('settingsFlag', false);
+//    localStorage.setItem('settingsFlag', false);
 //}
-  
-//if(localStorage.getItem('settingsFlag') == true){
-  //Call upon the 'apply settings' function
-  //  applySettings();
-//}
+//DEBUG!!
+//textBox.textContent = localStorage.getItem('settingsFlag');
+
+
+//If the settings have been changed, apply the new settings
+if(localStorage.getItem('settingsFlag') == 'true'){
+  //DEBUG!
+ //   textBox.textContent = localStorage.getItem('backGroundColor');
+// THIS WORKS!!
+
+  //Apply the settings if the flag returns true
+    applySettings();
+}
+
+
 
 //Action-Event Handling
 //-----------------------------------------------------------------------------------------------------
@@ -283,3 +294,63 @@
         addBackContainer.appendChild(newParagraph);    
     }
 //----------------------------------------------------------------------------------
+
+ 
+//NEW!!
+  //Apply the settings the user has entered into the dropdown!
+    function applySettings(){
+      //Check if the flag has been activated! (this will be done if interaction with ANY dropdown)
+        if(localStorage.getItem('settingsFlag') == 'true'){
+          //If the flag has been activated use the switch-case to parse the 'changedSettings'
+            //
+
+          //NEW!!
+          //JSON String to be read
+          //  const jsonString = localStorage.getItem('commandArray');
+            const jsonString = localStorage.getItem('commandArray');
+
+          //Parse the json String and place the items into an array?
+            const commandArray = JSON.parse(jsonString);
+
+          
+          //do a for-loop that will parse the array for the array's length
+            for(let i = 0; i < commandArray.length; i++){
+              //Switch case for updating the settings per the array
+                const updateIndex = commandArray[i];
+
+              //Switch-case for updating the selected array
+                switch(updateIndex){
+                  //Background Color 
+                    case '0':
+                      //DEBUG!!
+                        textBox.textContent = 'Background color change!';
+
+                      //Update the background color
+//                        document.getElementById('body').style.backgroundColor = localStorage.getItem('backGroundColor');
+
+                      //DEBUG! VERSION!!
+                        document.style.backgroundColor = localStorage.getItem('backGroundColor');
+                    break;
+
+                  //DEBUG!!
+                    case '2':
+                      //DEBUG!
+                        textBox.textContent = 'DEBUG!!';
+                    break;
+              
+                  //DEBUG!!
+                    case '3':
+                      //DEBUG!
+                        textBox.textContent = 'Okay okay';
+                    break;
+
+                }
+
+            }
+
+            //Call upon the switch case to apply the settings!
+
+        }
+        
+      //if flag == false 'do nothing!'
+    }
