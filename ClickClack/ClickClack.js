@@ -264,19 +264,12 @@ if(localStorage.getItem('settingsFlag') == 'true'){
   //Remove all of the dropdown menu's and extra items
     function removeClutter(){
       //This will remove all of the headers and unecessary text from the html doc
-        
-      //If the remove clutter flag has stayed the same
-     // if(clutterFlag){
+    
         //Elements to be removed
           const removeMe = document.getElementById('notificationText');
 
         //Remove the following!
           removeMe.parentNode.removeChild(removeMe);
-   
-        //NEW!!
-        //Set the flag back to false??
-         // clutterFlag = false;
-    // }
 
     }
 
