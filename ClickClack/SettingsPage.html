@@ -45,7 +45,11 @@
         <!--Color Prefs-->
         <h3>Color Preferences</h3>
             <!--Background Color-->
-            <h4>Background Color</h4>
+            <p id="backColor">Background Color</p>
+
+            <!--Have a round box as 'sample color'-->
+
+            <!--Background Color DropDown-->
             <select id="backgroundColorDrop" class="dropDown">
                 <option value="blue">blue</option>
                 <option value="red">red</option>
@@ -53,25 +57,33 @@
             </select>
 
             <!--Font Color-->
-            <h4>Font Color</h4>
-            <select id="fontColorDrop" class="dropDown">
-                <option value="blue">blue</option>
-                <option value="red">red</option>
-                <option value="orange">orange</option>
-            </select>
+            <p id="fontColor">Font Color</p>
+
+            <!--Sample Color-->
+
+            <!--Font Color DropDown-->
+            <div>
+                <select id="fontColorDrop" class="dropDown">
+                    <option value="blue">blue</option>
+                    <option value="red">red</option>
+                    <option value="orange">orange</option>
+                </select>
+            </div>
             <hr>
 
 
         <!--Size Prefs-->
         <h3>Size Preferences</h3>
             <!--Font Size-->
-            <h4>Font Size</h4>
-            <select id="fontColorDrop" class="dropDown">
+            <p>Font Size</p>
+            <select id="fontSizeDrop" class="dropDown">
                 <option value="18px">18px</option>
                 <option value="20px">20px</option>
                 <option value="22px">22px</option>
             </select>
 
+        <!--NEW!!!-->
+        <p>Test!!</p>
 
             <!--Other-->
 
@@ -79,9 +91,11 @@
     <!--Buttons for functionality-->
     <hr>
     <!--Buttons for saving new settings, going back to default, etc!-->
-    <button onclick="changeBackgroundColor()">Apply Settings</button>
-    <button onclick="trueFlag()">Test Me!!</button>
-    <button onclick="falseFlag()">RESET</button>
+    <button class="defaultButton" onclick="changeBackgroundColor()">Apply Settings</button>
+    <button class="defaultButton" onclick="trueFlag()">Test Me!!</button>
+    <button class="defaultButton" onclick="falseFlag()">RESET</button>
+    <button class="defaultButton" onclick="changeFontColor()">ok..</button>
+    
     
     <!--Go back to 'Click Clack'-->
     <a href="ClickClack.html">

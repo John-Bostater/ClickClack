@@ -4,7 +4,7 @@
 [Project Start Date]: //Here...
 
 [Description]:
-    //Description here
+  //Write here
 */
 
 
@@ -19,6 +19,7 @@
 
   //DropDown Setting(s) Elements
     const backgroundDrop = document.getElementById('backgroundColorDrop');
+    const fontcolorDrop = document.getElementById('fontColorDrop');
   
   //Color Switch Elements
     const header = document.getElementById('colorSwitch');
@@ -224,16 +225,14 @@ function animation0(){
   //Change the background color of the doc! (purp, red, etc!)
     function changeBackgroundColor(){
       //Get the dropdown value selected and set the local storage data!
-      //textBox.textContent= document.getElementById('backgroundColorDrop').value;
-      // = 'Yes!';
-
+     
       //Set the background color data to the dropdown value
         localStorage.setItem('backGroundColor', backgroundDrop.value);
 
-      //NEW!!
-      //localStorage.setItem('settingsFlag', true);
-        document.body.style.backgroundColor = backgroundDrop.value;
-    
+      //Change the Settings background Color as a sample
+        //document.body.style.backgroundColor = backgroundDrop.value;
+        document.getElementById('backColor').style.color = backgroundDrop.value;
+
       //Update the settings Flag
         localStorage.setItem('settingsFlag', true);
  
@@ -248,8 +247,21 @@ function animation0(){
 
   //Change the text field's font color!
     function changeFontColor(){
-      //Get the dropdown value and set the local storage data
 
+      //Set the background color data to the dropdown value
+        localStorage.setItem('fontColorDrop', fontcolorDrop.value);
+
+      //localStorage.setItem('settingsFlag', true);
+        document.body.style.color = fontcolorDrop.value;
+    
+      //Update the settings Flag
+        localStorage.setItem('settingsFlag', true);
+ 
+      //Push the command to update the background color to the array
+        commandArray.push('1');
+
+      //Update the array in local storage
+        updateCommandArr();  
     }
 
 
@@ -259,7 +271,7 @@ function animation0(){
     }
 
 
-  //NEW!!
+  //Update the array containing all of the changed settings
     function updateCommandArr(){
       //Final commands to be executed
         const readArr= JSON.stringify(commandArray);    

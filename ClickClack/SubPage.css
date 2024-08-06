@@ -33,8 +33,14 @@
     font-family: 'Times New Roman', Times, serif;
     padding: 10px;
     color: black;
+    -webkit-text-fill-color: black;
     outline: none;
     appearance: none;
+}
+
+/*NEW!!*/
+.defaultButton{
+    -webkit-text-fill-color: black;
 }
 /***************************************************/
 
@@ -58,7 +64,8 @@
 /*Text Styling*/
 /***************************************************/
 body{
-    font-size: 24px;
+    font-size: 28px;
+    -webkit-text-fill-color: white;
     background-color: black;
     cursor: default;
 }
@@ -78,11 +85,5 @@ h2{
 h3{
     font-size: 34px;
     -webkit-text-fill-color: red;
-}
-
-/*Other*/
-h4{
-    font-size: 28px;
-    -webkit-text-fill-color: white;
 }
 /***************************************************/

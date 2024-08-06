@@ -321,13 +321,16 @@ if(localStorage.getItem('settingsFlag') == 'true'){
                 break;
 
               //DEBUG!!
-                case '2':
+                case '1':
                   //DEBUG!
-                    textBox.textContent = 'DEBUG!!';
+                    //textBox.textContent = 'DEBUG!!';
+
+                  //NEW!!
+                    textBox.style.color = localStorage.getItem('fontColorDrop');
                 break;
           
               //DEBUG!!
-                case '3':
+                case '2':
                   //DEBUG!
                     textBox.textContent = 'Okay okay';
                 break;

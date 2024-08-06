@@ -75,7 +75,7 @@
       //Produce 255 unique words for our string
         for(let i = 0; i < 255; i++){
           //Generate a new random number, modulo by 256 to produce # between 0 & 255
-            let randNum = Math.floor((Math.random() * variability) % 37);    
+            let randNum = Math.floor((Math.random() * variability) % 40);    
     
           //Switch-case for using the random number to generate a new word
             switch(randNum){
@@ -225,6 +225,18 @@
              
               case 36:
                 randStr += 'algorithm ';
+                break;
+            
+              case 37:
+                randStr += 'model ';
+                break;
+             
+              case 38:
+                randStr += 'transistor ';
+                break;
+            
+              case 39:
+                randStr += 'definite ';
                 break;
             
             }
