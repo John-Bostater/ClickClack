@@ -229,16 +229,20 @@ function animation0(){
       //Set the background color data to the dropdown value
         localStorage.setItem('backGroundColor', backgroundDrop.value);
 
+
       //Change the Settings background Color as a sample
-        //document.body.style.backgroundColor = backgroundDrop.value;
-        document.getElementById('backColor').style.color = backgroundDrop.value;
+        document.body.style.color = backgroundDrop.value;
+        //document.body.style.color = 'red';
+        //NEW!!
+        //const hello = document.getElementById('backColor');
+        //document.body.style.color = backgroundDrop.value;
+
 
       //Update the settings Flag
         localStorage.setItem('settingsFlag', true);
  
       //Push the command to update the background color to the array
         commandArray.push('0');
-
 
       //Update the array in local storage
         updateCommandArr();  
@@ -247,7 +251,6 @@ function animation0(){
 
   //Change the text field's font color!
     function changeFontColor(){
-
       //Set the background color data to the dropdown value
         localStorage.setItem('fontColorDrop', fontcolorDrop.value);
 
