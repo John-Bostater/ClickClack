@@ -20,6 +20,7 @@
   //DropDown Setting(s) Elements
     const backgroundDrop = document.getElementById('backgroundColorDrop');
     const fontcolorDrop = document.getElementById('fontColorDrop');
+    const fontsizeDrop = document.getElementById('fontSizeDrop');
   
   //Color Switch Elements
     const header = document.getElementById('colorSwitch');
@@ -62,6 +63,9 @@ function falseFlag(){
 //Use this function for setting the various settings!!
 //[set settingsFlag = true;]
 function trueFlag(){
+  //Have this function call the other functions
+  //  This fuction should be in place of 'changeBackgroundColor()'
+  //  for the 'Apply Settings' button
   
 }
 
@@ -208,13 +212,7 @@ function animation0(){
 //NEW!!
 //Action-Event Listeners
 //-----------------------------------------------------------
-          
-//  backgroundDrop.addEventListener('click', () => {
-    //localStorage.setItem('backGroundColor', 'orange');
-    //  document.body.style.backgroundColor = backgroundDrop.value;
-  
-  //});
-
+  //Have an action-event listener for 
 
 //-----------------------------------------------------------
 
@@ -236,7 +234,6 @@ function animation0(){
         //NEW!!
         //const hello = document.getElementById('backColor');
         //document.body.style.color = backgroundDrop.value;
-
 
       //Update the settings Flag
         localStorage.setItem('settingsFlag', true);
@@ -265,6 +262,21 @@ function animation0(){
 
       //Update the array in local storage
         updateCommandArr();  
+    }
+
+
+  //Change the text field's font size
+    function changeFontSize(){
+      //Regex to check that the value entered is all digits and at least 3 chars or less
+       // const valueCheck = /^\d{1,3}$/;
+
+      //Regex check!!
+      // if(valueCheck.test(fontsizeInput)){
+
+       // }
+
+      //Set the font size data to the dropdown value
+        //localStorage.setItem('fontSizeDrop', fontsizeDrop.value)
     }
 
 

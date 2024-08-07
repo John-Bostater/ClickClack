@@ -38,9 +38,10 @@
     appearance: none;
 }
 
+
 /*NEW!!*/
 .defaultButton{
-    -webkit-text-fill-color: black;
+    -webkit-text-fill-color: black; 
 }
 /***************************************************/
 
@@ -57,6 +58,21 @@
 .goBack:hover{
     background-color: lightblue;
     cursor: pointer;
+}
+/***************************************************/
+
+
+/*Text Input*/
+/***************************************************/
+.fontSizeInput{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-color: white;
+    background-color: transparent;
+    -webkit-text-fill-color: white;
+    caret-color: white;
+    outline: none;
 }
 /***************************************************/
 
@@ -85,5 +101,10 @@ h2{
 h3{
     font-size: 34px;
     -webkit-text-fill-color: red;
+}
+
+/**/
+.subHeadText{
+    font-size: 14px;
 }
 /***************************************************/
