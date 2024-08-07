@@ -84,15 +84,28 @@ if(localStorage.getItem('settingsFlag') == 'false'){
 }
 
 
+
+//NEW!!
+//Instead of apply settings have settings update upon dropdown change??
+backgroundDrop.addEventListener('focus', () => {
+  document.body.style.backgroundColor = backgroundDrop.value;
+});
+//Set the background color upon the user clicking out of the drop menu too!
+backgroundDrop.addEventListener('blur', () => {
+  document.body.style.backgroundColor = backgroundDrop.value;
+});
+
+
+//DEBUG!!
+function hello1(){
+  document.body.style.backgroundColor = 'green';
+}
+
+
+
 //Light/Dark Mode
 //-----------------------------------------------------------
 function animation0(){  
-  //NEW IDEA!!!
-  //Instead of rotate have a rise and fall animation for the moon or sun
-  //    moonElement.style.transform = 'translateY(' + 90 + 'px)'
-  //    sunElement.style.transform = 'translateY(' + 90 + 'px)'
-  
-  
   //Rotate the moon and sun animation
     moonElement.style.transform = 'rotate(' + rotationAngle + 'deg)'
     rotationAngle += 180;

@@ -48,7 +48,7 @@
 //If the settings have been changed, apply the new settings
 if(localStorage.getItem('settingsFlag') == 'true'){
   //DEBUG!
-    textBox.textContent = localStorage.getItem('backGroundColor');
+ //   textBox.textContent = localStorage.getItem('backGroundColor');
 // THIS WORKS!!
 //darkModeFlag = false;
 
@@ -325,14 +325,14 @@ if(localStorage.getItem('settingsFlag') == 'true'){
                   //DEBUG!
                     //textBox.textContent = 'DEBUG!!';
 
-                  //NEW!!
+                  //Update the color of the text area in the 
                     textBox.style.color = localStorage.getItem('fontColorDrop');
                 break;
           
               //DEBUG!!
                 case '2':
                   //DEBUG!
-                    textBox.textContent = 'Okay okay';
+                  //  textBox.textContent = 'Okay okay';
                 break;
 
             }
