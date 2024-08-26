@@ -1,0 +1,346 @@
+/*
+[Author]: John Bostater
+
+[Project Start Date]: 5/11/24
+*/
+
+
+/*Text Styling*/
+/********************************************************************/
+/*Base text of the entire document*/
+body{
+    /*Set font and style*/
+    /*
+    background-color: #1A1A1A;
+    */
+    background-color: black;
+}
+
+/*Header style #1 [Large]*/
+h1{
+    /*Set font size & style*/
+    font-size: 72px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: Italic;
+    color: white;
+    margin-bottom: 25px;
+}
+
+/*Styling for any links*/
+.link-Style{
+    cursor: pointer;
+    color: gray;
+    font-size: 24px;
+    padding: 10px;
+}
+
+/*Refresh text, text*/
+.refreshText{
+    color: white;
+    cursor: pointer;
+}
+
+/*Press any key to proceed*/
+#notificationText{
+    color: white;
+    position: absolute;
+}
+/********************************************************************/
+
+
+
+/*DropDown, Art, & Animation*/
+/******************************************/
+
+/*DropDown (Select) Styling for all*/
+.dropDown{
+    padding: 5px;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    -webkit-text-fill-color: white;
+    border-color: transparent;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/*DropDown container for quick settings*/
+.dropDownContainer{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2a2a2a;
+}
+
+
+/*Timer*/
+#timer{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: initial;
+    font-size: 30px;
+    color: red;
+}
+
+
+/*WPM*/
+#wpmDisplay{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: initial;
+    font-size: 30px;
+    color: red;
+}
+
+
+/*Timer Header*/
+#timerHeader{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: initial;
+    font-size: 30px;
+    color: white;
+}
+
+
+/*Light/Dark Mode toggle switch*/
+#light-dark-toggle{
+    /*Toggle switch space*/
+    width: 80px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #1a1a1a;
+    position: absolute;
+    left: 15px;
+    cursor: pointer;
+}
+
+
+/*May have to switch to ID #*/
+/*Toggle Bar (On = Blue, Off = Red)*/
+#toggleBar{
+    background-color: gray;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 65px;
+    height: 20px;
+    border-radius: 25px;
+}
+
+
+/*Toggle Switch Ball*/
+#toggleBall{
+    background-color: purple;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+
+/*Moon*/
+.moon{
+    /*Object creation*/
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #2A2A2A;
+    position: absolute;
+
+    /*NEW!!*/
+    left: 5px;
+
+
+    /*Animation relation*/
+    transform-origin: 50px;
+    transition: transform 2s;  
+}
+
+/*Crater*/
+.crater0{
+    /*Object creation*/
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: rgb(138, 138, 138);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+/*Crater*/
+.crater1{
+    /*Object creation*/
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: rgb(5, 5, 5);
+    position: absolute;
+    left: 11px;
+    top: 10px;
+}
+
+
+/*Sun*/
+.sun{
+    /*Object creation*/
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: yellow;
+    position: absolute;
+
+
+    /*NEW!!*/
+    left: 5px;
+
+    /*Animation relation*/
+    transform-origin: 50px;
+    transition: transform 2s;  
+}
+
+
+/*NEW!!!*/
+.planetContainer{
+    padding: 5px;
+}
+
+
+
+/*Animation*/
+/****************************************************/
+/*Fade-In, Fade-Out*/
+@keyframes fadeInAni {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutAni {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.fadeIn{
+    animation: fadeInAni 1s ease;
+}
+
+.fadeOut{
+    animation: fadeOutAni 1s ease;
+}
+
+
+/*Translate Left to Right (Ease)*/
+.toggleOn{
+    animation: moveRight 1s ease;
+    transform: translateX(45px);
+}
+
+
+/*Translate Right to Left (Ease)*/
+.toggleOff{
+    animation: moveLeft 1s ease;
+    transform: translateX(0px);
+}
+
+@keyframes moveRight{
+    from{
+        transform: translateX(0px);
+    }
+    to{        
+        transform: translateX(45px);
+    }
+}
+
+@keyframes moveLeft{
+    from{
+        transform: translateX(45px);
+    }
+    to{        
+        transform: translateX(0px);
+    }
+}
+/****************************************************/
+
+
+
+/*Containers & Alignment*/
+/******************************************/
+
+/*Vertical Container*/
+.vertical0{
+    text-align: center;
+}
+
+/*KEEP!!! (Rename) ,this is used for spacing*/
+.spaceMe0{
+    padding: 2%;    
+}
+
+
+/*Container for all of the live stats [Timer & Wpm]*/
+.liveStatsContainer{
+    color: white;
+    font-size: 30px;
+    padding: 40px;
+}
+
+
+/*Container for the test contents and notifications*/
+#testContainer{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Text Area for the typing test*/
+.typeTestBox{
+    /*Set the input box's features*/
+    background-color: transparent;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+
+    /*Border color of the input box*/
+    border-radius: 5px;
+    border-color: white;
+    
+    /*Alignment & Positioning*/
+    /*FIX ALIGNMENTS BELOW!!!*/
+    width: 80%;
+    height: 50vh;
+
+
+    /*Text box blur and transition animation*/
+    filter: blur(5px);
+    transition: filter 0.6s ease;
+    padding: 15px;
+    
+    /*Change the cursor color to orange*/
+    caret-color: orange;
+    cursor: pointer;
+
+    /*Get rid of textarea highlight*/
+    outline: none;
+}
+
+/*When the user focuses into the */
+.typeTestBox:focus{
+    /*Change the color of the text upon focus*/
+    /*color: red;*/
+    filter: blur(0px);
+}
+
+
+/*Container for all of the links to the external sites*/
+.linkContainer{
+    padding: 30px;
+}
+/******************************************/
